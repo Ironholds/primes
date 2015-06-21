@@ -33,13 +33,11 @@ std::vector < bool > is_prime_vector(std::vector < int > x){
   return output;
 }
 
-//'@rdname prime
-//'@export
 //[[Rcpp::export]]
-std::vector < int > generate_primes(int max){
+std::vector < int > generate_primes_(int min, int max){
 
   std::vector < int > output;
-  for(int i = 0; i <= max; i++){
+  for(int i = min; i <= max; i++){
     if(is_prime_single(i)){
       output.push_back(i);
     }

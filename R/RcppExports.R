@@ -5,9 +5,7 @@ is_prime_vector <- function(x) {
     .Call('primes_is_prime_vector', PACKAGE = 'primes', x)
 }
 
-#'@rdname prime
-#'@export
-generate_primes <- function(max) {
-    .Call('primes_generate_primes', PACKAGE = 'primes', max)
+generate_primes_ <- function(min, max) {
+    .Call('primes_generate_primes_', PACKAGE = 'primes', min, max)
 }
 

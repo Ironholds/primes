@@ -14,6 +14,8 @@ NULL
 #'
 #' @param x an integer vector containing elements you want to determine the primality of.
 #'
+#' @param min the value to generate primes from.
+#'
 #' @param max the maximum value to generate prime numbers up to.
 #'
 #' @details \code{is_prime} and \code{generate_primes} rely on Wilson's theorem to test for a number's primality;
@@ -28,11 +30,17 @@ NULL
 #' is_prime(1299827)
 #' # [1] TRUE
 #'
-#' generate_primes(12)
+#' generate_primes(max =12)
 #' # [1]  2  3  5  7 11
 #' @rdname prime
 #' @name prime
 #' @export
 is_prime <- function(x){
   is_prime_vector(x)
+}
+
+#'@rdname prime
+#'@export
+generate_primes <- function(min = 0, max){
+  generate_primes_(min, max)
 }
