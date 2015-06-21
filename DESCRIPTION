@@ -1,12 +1,13 @@
 Package: primes
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
-Date: 2015-05-30
+Title: Generate and Test for Prime Numbers
+Version: 0.1.0
+Date: 2015-06-21
 Author: Who wrote it
 Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Description: Functions to test whether a number is prime and generate the prime numbers within a specified range. Based around
+             An implementation of Wilson's theorem for testing for an integer's primality.
+License: MIT + file LICENSE
 Suggests: testthat
 LinkingTo: Rcpp
 Imports: Rcpp
