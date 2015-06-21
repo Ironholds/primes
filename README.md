@@ -2,7 +2,7 @@
 
 __Author:__ Oliver Keyes<br/>
 __License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
-__Status:__ Stable
+__Status:__ In development
 
 ### Description
 
