@@ -1,6 +1,8 @@
 #' @title Functions for Identifying and Generating Prime Numbers
 #' @name primes
-#' @description blardfdsfsdfsd
+#' @description Functions to test whether a number is prime and generate the prime numbers within
+#' a specified range. Based around an implementation of Wilson's theorem for testing for an
+#' integer's primality.
 #'
 #' @useDynLib primes
 #' @importFrom Rcpp sourceCpp

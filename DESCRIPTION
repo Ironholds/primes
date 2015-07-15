@@ -6,7 +6,7 @@ Date: 2015-06-21
 Author: Oliver Keyes
 Maintainer: Oliver Keyes <ironholds@gmail.com>
 Description: Functions to test whether a number is prime and generate the prime numbers within a specified range. Based around
-             An implementation of Wilson's theorem for testing for an integer's primality.
+             an implementation of Wilson's theorem for testing for an integer's primality.
 License: MIT + file LICENSE
 Suggests: testthat
 LinkingTo: Rcpp
