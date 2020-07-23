@@ -1,13 +1,18 @@
 Package: primes
 Type: Package
 Title: Generate and Test for Prime Numbers
-Version: 0.1.0
-Date: 2015-06-21
-Author: Oliver Keyes
-Maintainer: Oliver Keyes <ironholds@gmail.com>
-Description: Functions to test whether a number is prime and generate the prime numbers within a specified range. Based around
-             an implementation of Wilson's theorem for testing for an integer's primality.
+Version: 0.2.0
+Date: 2020-07-23
+Authors@R: c(
+    person("Oliver", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
+    person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"))
+    )
+Description: Functions to test whether a number is prime and generate the prime
+    numbers within a specified range.
 License: MIT + file LICENSE
 Suggests: testthat
 LinkingTo: Rcpp
 Imports: Rcpp
+SystemRequirements: C++11
+RoxygenNote: 7.1.0
+Encoding: UTF-8

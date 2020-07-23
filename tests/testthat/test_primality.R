@@ -19,5 +19,6 @@ test_that("Prime numbers can be generated, full stop", {
 })
 
 test_that("'min' is respected", {
+  expect_that(generate_primes(4, 12), equals(c(5,7,11)))
   expect_that(generate_primes(5, 12), equals(c(5,7,11)))
 })
