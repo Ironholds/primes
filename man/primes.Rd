@@ -7,7 +7,7 @@
 \title{Functions for Identifying and Generating Prime Numbers}
 \description{
 Functions to test whether a number is prime and generate the
-  prime numbers within a specified range. Based on trial division and the
-  Sieve of Eratosthenes for testing for an integer's primality, depending of
-  the function used.
+  prime numbers within a specified range. Algorithms are based on either
+  trial division and the Sieve of Eratosthenes, depending on the function
+  used.
 }

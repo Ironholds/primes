@@ -1,9 +1,9 @@
 #' @title Functions for Identifying and Generating Prime Numbers
 #' @name primes
 #' @description Functions to test whether a number is prime and generate the
-#'   prime numbers within a specified range. Based on trial division and the
-#'   Sieve of Eratosthenes for testing for an integer's primality, depending of
-#'   the function used.
+#'   prime numbers within a specified range. Algorithms are based on either
+#'   trial division and the Sieve of Eratosthenes, depending on the function
+#'   used.
 #'
 #' @useDynLib primes
 #' @importFrom Rcpp sourceCpp
@@ -12,11 +12,10 @@
 NULL
 
 #' @title Generate and Test for Prime Numbers
-#' @description Generate prime numbers or test whether a sequence of numbers you
-#'   have are prime or not.
+#' @description Generate prime numbers or test whether a sequence of numbers is
+#'    prime or composite.
 #'
-#' @param x an integer vector containing elements you want to determine the
-#'   primality of.
+#' @param x an integer vector containing elements to be tested for primality.
 #' @param min the value to generate primes from.
 #' @param max the maximum value to generate prime numbers up to.
 #'
@@ -26,10 +25,10 @@ NULL
 #' @examples
 #' #Test for primality
 #' is_prime(1299827)
-#' # [1] TRUE
+#' ## [1] TRUE
 #'
 #' generate_primes(max = 12)
-#' # [1]  2  3  5  7 11
+#' ## [1]  2  3  5  7 11
 #' @rdname prime
 #' @name prime
 #' @export

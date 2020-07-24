@@ -11,16 +11,15 @@ is_prime(x)
 generate_primes(min = 2L, max)
 }
 \arguments{
-\item{x}{an integer vector containing elements you want to determine the
-primality of.}
+\item{x}{an integer vector containing elements to be tested for primality.}
 
 \item{min}{the value to generate primes from.}
 
 \item{max}{the maximum value to generate prime numbers up to.}
 }
 \description{
-Generate prime numbers or test whether a sequence of numbers you
-  have are prime or not.
+Generate prime numbers or test whether a sequence of numbers is
+   prime or composite.
 }
 \details{
 \code{is_prime} relies on trial division to test for a number's
@@ -29,8 +28,8 @@ Generate prime numbers or test whether a sequence of numbers you
 \examples{
 #Test for primality
 is_prime(1299827)
-# [1] TRUE
+## [1] TRUE
 
 generate_primes(max = 12)
-# [1]  2  3  5  7 11
+## [1]  2  3  5  7 11
 }
