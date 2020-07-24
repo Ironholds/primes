@@ -5,7 +5,7 @@ bool is_prime_single(int x) {
   bool output = true;
   if (x <= 3) {
     output = (x > 1);
-  } else if ( x % 2 == 0 || x % 3 == 0) {
+  } else if (x % 2 == 0 || x % 3 == 0) {
     output = false;
   } else {
     for(int i=5, stop=sqrt(x); i <= stop; i+=6) {
