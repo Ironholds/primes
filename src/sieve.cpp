@@ -1,4 +1,4 @@
-#include "primes.hpp"
+#include "primes.h"
 
 #define num2index(x) ((x) - 3) / 2
 #define index2num(x) ((x) * 2) + 3

@@ -1,4 +1,4 @@
-#include "primes.hpp"
+#include "primes.h"
 
 bool is_prime_single(int x) {
 

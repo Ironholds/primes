@@ -1,5 +1,5 @@
-#ifndef R_PKG_PRIMES_HPP
-#define R_PKG_PRIMES_HPP
+#ifndef R_PKG_PRIMES_H
+#define R_PKG_PRIMES_H
 
 #include <vector>
 #include <cmath>
@@ -12,4 +12,4 @@ bool is_prime_single(int x);
 std::vector<bool> is_prime_vector(std::vector<int> x);
 
 
-#endif // R_PKG_PRIMES_HPP
+#endif // R_PKG_PRIMES_H
