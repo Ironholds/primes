@@ -6,8 +6,6 @@
 \alias{primes-package}
 \title{Functions for Identifying and Generating Prime Numbers}
 \description{
-Functions to test whether a number is prime and generate the
-  prime numbers within a specified range. Algorithms are based on either
-  trial division and the Sieve of Eratosthenes, depending on the function
-  used.
+Functions to test whether a number is prime and generate
+  prime numbers within a specified range.
 }

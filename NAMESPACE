@@ -2,5 +2,7 @@
 
 export(generate_primes)
 export(is_prime)
+export(next_prime)
+export(prev_prime)
 importFrom(Rcpp,sourceCpp)
 useDynLib(primes)

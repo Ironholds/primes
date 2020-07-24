@@ -7,22 +7,8 @@ Prime Number Testing and Generation in R
 
 ## Description
 
-This is a simple package that does two things:
-
-<dl>
-  <dt>Test for primality of numbers</dt>
-    <dd>Testing can be done with <code>is_prime</code>, which accepts an integer
-    vector of any length and returns a logical vector of <em>equal</em> length
-    containing, for each element, whether it is prime (<code>TRUE</code>) or not
-    (<code>FALSE</code>).</dd>
-  <dt>Generate ranges of prime numbers</dt>
-    <dd>The <code>generate_primes</code> function generates every prime number
-    between <code>min</code> and <code>max</code>, where <code>min</code> is
-    <code>2L</code> by default.</dd>
-</dl>
-
-The `is_prime` function uses trial division, while `generate_primes` uses a
-tweaked Sieve of Eratosthenes to create ranges of primes.
+This R package has several utility functions for dealing with prime numbers,
+such as checking for primality and generating prime numbers.
 
 ## Installation
 

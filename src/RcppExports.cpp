@@ -8,14 +8,36 @@
 
 using namespace Rcpp;
 
-// is_prime_vector
-std::vector<bool> is_prime_vector(std::vector<int> x);
-RcppExport SEXP _primes_is_prime_vector(SEXP xSEXP) {
+// is_prime
+std::vector<bool> is_prime(std::vector<int> x);
+RcppExport SEXP _primes_is_prime(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(is_prime_vector(x));
+    rcpp_result_gen = Rcpp::wrap(is_prime(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// next_prime
+Rcpp::IntegerVector next_prime(std::vector<int> x);
+RcppExport SEXP _primes_next_prime(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(next_prime(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// prev_prime
+Rcpp::IntegerVector prev_prime(std::vector<int> x);
+RcppExport SEXP _primes_prev_prime(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(prev_prime(x));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -47,7 +69,9 @@ RcppExport SEXP _primes_RcppExport_registerCCallable() {
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_primes_is_prime_vector", (DL_FUNC) &_primes_is_prime_vector, 1},
+    {"_primes_is_prime", (DL_FUNC) &_primes_is_prime, 1},
+    {"_primes_next_prime", (DL_FUNC) &_primes_next_prime, 1},
+    {"_primes_prev_prime", (DL_FUNC) &_primes_prev_prime, 1},
     {"_primes_generate_primes_", (DL_FUNC) &_primes_generate_primes_, 2},
     {"_primes_RcppExport_registerCCallable", (DL_FUNC) &_primes_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}

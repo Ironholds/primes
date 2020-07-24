@@ -22,3 +22,14 @@ test_that("'min' is respected", {
   expect_that(generate_primes(4, 12), equals(c(5,7,11)))
   expect_that(generate_primes(5, 12), equals(c(5,7,11)))
 })
+
+
+context("Test for next and previous")
+
+test_that("Search for next prime works", {
+  expect_that(next_prime(-1:7), equals(c(2L, 2L, 2L, 3L, 5L, 5L, 7L, 7L, 11L)))
+})
+
+test_that("Search for previous also works", {
+  expect_that(prev_prime(-1:7), equals(c(NA, NA, NA, NA, 2L, 3L, 3L, 5L, 5L)))
+})
