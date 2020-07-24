@@ -1,10 +1,11 @@
-#' @title Functions for Identifying and Generating Prime Numbers
-#' @name primes
-#' @description Functions to test whether a number is prime and generate
-#'   prime numbers within a specified range.
+#' Functions for Identifying and Generating Prime Numbers
+#'
+#' Functions for dealing with prime numbers, such as testing whether a number is
+#' prime and generating a sequence prime numbers.
 #'
 #' @useDynLib primes
 #' @importFrom Rcpp sourceCpp
 #' @docType package
+#' @name primes
 #' @aliases primes primes-package
 NULL

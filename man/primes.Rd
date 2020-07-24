@@ -6,6 +6,6 @@
 \alias{primes-package}
 \title{Functions for Identifying and Generating Prime Numbers}
 \description{
-Functions to test whether a number is prime and generate
-  prime numbers within a specified range.
+Functions for dealing with prime numbers, such as testing whether a number is
+prime and generating a sequence prime numbers.
 }
