@@ -1,7 +1,12 @@
 #include "primes.h"
 
-#define num2index(x) ((x) - 3) / 2
-#define index2num(x) ((x) * 2) + 3
+inline int num2index(int x) {
+  return (x - 3) / 2;
+}
+
+inline int index2num(int x) {
+  return (x * 2) + 3;
+}
 
 // [[Rcpp::export]]
 std::vector<int> generate_primes_(int min, int max) {
@@ -24,6 +29,3 @@ std::vector<int> generate_primes_(int min, int max) {
 
   return out;
 }
-
-#undef num2index
-#undef index2num
