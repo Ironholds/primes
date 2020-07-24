@@ -14,5 +14,7 @@ Suggests: testthat
 LinkingTo: Rcpp
 Imports: Rcpp
 SystemRequirements: C++11
+URL: http://github.com/ironholds/primes
+BugReports: http://github.com/ironholds/primes/issues
 RoxygenNote: 7.1.0
 Encoding: UTF-8
