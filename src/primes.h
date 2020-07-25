@@ -13,6 +13,9 @@ bool is_prime_(int x);
 std::vector<bool> is_prime(std::vector<int> x);
 Rcpp::IntegerVector next_prime(std::vector<int> x);
 Rcpp::IntegerVector prev_prime(std::vector<int> x);
+int prime_count(int n, bool upper_bound);
+int primorial_n(int n);
+int primorial_p(int n);
 
 
 #endif // R_PKG_PRIMES_H

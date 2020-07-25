@@ -11,7 +11,8 @@ inline int index2num(int x) {
 // [[Rcpp::export]]
 std::vector<int> generate_primes_(int min, int max) {
   std::vector<int> out;
-  if (max < 2)
+
+  if (max < 2 || min > max)
     return out;
 
   int len = (max + 1)/2 - 1;

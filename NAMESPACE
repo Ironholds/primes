@@ -2,7 +2,10 @@
 
 export(generate_primes)
 export(is_prime)
+export(k_tuple)
 export(next_prime)
 export(prev_prime)
+export(primorial_n)
+export(primorial_p)
 importFrom(Rcpp,sourceCpp)
 useDynLib(primes)

@@ -19,6 +19,41 @@ is_prime <- function(x) {
     .Call('_primes_is_prime', PACKAGE = 'primes', x)
 }
 
+#' Prime _k_-tuples
+#'
+#' Use prime _k_-tuples to create lists of twin primes, cousin primes,
+#' prime triplets, and so forth.
+#'
+#' @inheritParams generate_primes
+#' @param tuple an integer vector representing the target _k_-tuple pattern.
+#'
+#' @examples
+#' # All twin primes up to 13
+#' k_tuple(2, 13, c(0,2))
+#' ## [[1]]
+#' ## [1] 3 5
+#' ##
+#' ## [[2]]
+#' ## [1] 5 7
+#' ##
+#' ## [[3]]
+#' ## [1] 11 13
+#'
+#' # Some prime triplets
+#' k_tuple(2, 19, c(0,4,6))
+#' ## [[1]]
+#' ## [1]  7 11 13
+#' ##
+#' ## [[2]]
+#' ## [1] 13 17 19
+#'
+#' @return A list of vectors of prime numbers satisfying the condition of
+#'   `tuple`.
+#' @export
+k_tuple <- function(min, max, tuple) {
+    .Call('_primes_k_tuple', PACKAGE = 'primes', min, max, tuple)
+}
+
 #' Find the Next and Previous Prime Numbers
 #'
 #' Find the next prime number or previous prime number in a vector.
@@ -44,6 +79,22 @@ next_prime <- function(x) {
 #' @export
 prev_prime <- function(x) {
     .Call('_primes_prev_prime', PACKAGE = 'primes', x)
+}
+
+prime_count <- function(n, upper_bound) {
+    .Call('_primes_prime_count', PACKAGE = 'primes', n, upper_bound)
+}
+
+#' @rdname primorial
+#' @export
+primorial_n <- function(n) {
+    .Call('_primes_primorial_n', PACKAGE = 'primes', n)
+}
+
+#' @rdname primorial
+#' @export
+primorial_p <- function(n) {
+    .Call('_primes_primorial_p', PACKAGE = 'primes', n)
 }
 
 generate_primes_ <- function(min, max) {

@@ -16,8 +16,8 @@ prev_prime(x)
 Find the next prime number or previous prime number in a vector.
 }
 \details{
-For `next_prime`, if a value is less than or equal to 2, the function will
-return `NA`.
+For \code{next_prime}, if a value is less than or equal to 2, the function will
+return \code{NA}.
 }
 \examples{
 next_prime(5)

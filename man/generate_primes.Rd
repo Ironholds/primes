@@ -12,7 +12,7 @@ generate_primes(min = 2L, max)
 \item{max}{the upper bound of the sequence.}
 }
 \description{
-Generates a sequence of prime numbers from `min` to `max` using a modified
+Generates a sequence of prime numbers from \code{min} to \code{max} using a modified
 Sieve of Eratosthenes.
 }
 \examples{
