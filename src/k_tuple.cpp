@@ -38,19 +38,19 @@ Rcpp::List k_tuple(int min, int max, std::vector<int> tuple) {
 
   if (tuple.size() < 2)
     Rcpp::stop("`tuple` size must be at least 2.");
+  if (tuple[0] != 0)
+    Rcpp::stop("the first element of `tuple` must be zero.");
 
-  for (int i=0; i <= (primes.size() - tuple.size()); i++) {
+  for (auto it = primes.begin(); it != (primes.end() - tuple.size() + 1); ++it) {
     bool match = true;
-    for (int j=0; j < tuple.size(); j++) {
-      if (primes[i + j] - primes[i] != tuple[j]) {
+    for (int j=1; j < tuple.size(); j++) {
+      if (*(it + j) - *it != tuple[j]) {
         match = false;
         break;
       }
     }
     if (match) {
-      std::vector<int> matching_set(tuple.size());
-      for (int k=0; k < tuple.size(); k++)
-        matching_set[k] = primes[i + k];
+      std::vector<int> matching_set(it, it + tuple.size());
       out.push_back(matching_set);
     }
   }
