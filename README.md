@@ -1,17 +1,48 @@
-## Prime Number Testing and Generation in R
+Prime Numbers in R
+==================
 
-__Author:__ Oliver Keyes<br/>
-__License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
-__Status:__ In development
+[![CRAN\_version](http://www.r-pkg.org/badges/version/primes)](https://cran.r-project.org/package=primes)
+[![Number\_of\_Downloads](https://cranlogs.r-pkg.org/badges/grand-total/primes)](https://cran.r-project.org/package=primes)
 
-### Description
 
-`primes` is a simple package that does two things; tests for prime numbers, and generates prime numbers. Testing can be done with `is_prime`, which accepts an integer vector of any length and returns a logical vector of *equal* length containing, for each element, whether it is prime (TRUE) or not (FALSE). `generate_primes` generates every prime number between `min` and `max`, where `min` is 0 by default.
+**Authors**: Os Keyes and Paul Egeler  
+**License**: [MIT](http://opensource.org/licenses/MIT)  
 
-Both functions rely on a C++ implementation of Wilson's theorem for testing primality; in theory this is a very slow test, but in practice, due to the restrictions R places around maximum integer sizes, it's fast enough for our needs.
+## Description
 
-### Installation
+This R package has several utility functions for dealing with prime numbers,
+such as checking for primality and generating prime numbers.
 
-For the development version:
+## Installation
 
-> devtools::install_github("ironholds/primes")
+You can install the released version of primes from [CRAN](https://CRAN.R-project.org) with:
+
+```r
+install.packages("primes")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+```r
+# install.packages("devtools")
+devtools::install_github("ironholds/primes")
+```
+
+## Example
+
+This checks which of the first twenty natural numbers are prime:
+
+```r
+library(primes)
+
+is_prime(1:20)
+## [1] FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE
+## [15] FALSE FALSE  TRUE FALSE  TRUE FALSE
+```
+
+You can also generate all the prime numbers between 101 and 199 with the following:
+
+```r
+generate_primes(101, 199)
+## [1] 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199
+```

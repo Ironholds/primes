@@ -1,3 +1,4 @@
+^\.gitattributes$
 ^CONDUCT\.md$
 ^.*\.Rproj$
 ^\.Rproj\.user$
