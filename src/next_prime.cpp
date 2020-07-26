@@ -2,9 +2,9 @@
 
 //' Find the Next and Previous Prime Numbers
 //'
-//' Find the next prime number or previous prime number in a vector.
+//' Find the next prime numbers or previous prime numbers over a vector.
 //'
-//' For `next_prime`, if a value is less than or equal to 2, the function will
+//' For `prev_prime`, if a value is less than or equal to 2, the function will
 //' return `NA`.
 //'
 //' @param x a vector of integers from which to start the search.

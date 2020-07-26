@@ -16,10 +16,10 @@ prev_prime(x)
 An integer vector of prime numbers.
 }
 \description{
-Find the next prime number or previous prime number in a vector.
+Find the next prime numbers or previous prime numbers over a vector.
 }
 \details{
-For \code{next_prime}, if a value is less than or equal to 2, the function will
+For \code{prev_prime}, if a value is less than or equal to 2, the function will
 return \code{NA}.
 }
 \examples{
