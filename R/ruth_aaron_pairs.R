@@ -15,7 +15,7 @@ ruth_aaron_pairs <-function(min, max, distinct = FALSE) {
   n <- seq(min, max)
 
   sums <- vapply(
-    prime_factor(n),
+    prime_factors(n),
     if (distinct) function(x) sum(unique(x)) else function(x) sum(x),
     integer(1)
   )

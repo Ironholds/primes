@@ -87,8 +87,8 @@ prime_count <- function(n, upper_bound) {
 #'   each element of the input vector.
 #' @author Paul Egeler, MS
 #' @export
-prime_factor <- function(x) {
-    .Call('_primes_prime_factor', PACKAGE = 'primes', x)
+prime_factors <- function(x) {
+    .Call('_primes_prime_factors', PACKAGE = 'primes', x)
 }
 
 #' @rdname primorial

@@ -28,7 +28,7 @@
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-Rcpp::List prime_factor(std::vector<int> x) {
+Rcpp::List prime_factors(std::vector<int> x) {
   Rcpp::List out(x.size());
   auto it = out.begin();
   auto primes = generate_primes_(2, *std::max_element(x.begin(), x.end()));
