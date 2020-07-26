@@ -17,7 +17,7 @@ each element of the input vector.
 Compute the prime factors of elements of an integer vector.
 }
 \examples{
-prime_factor(c(1, 5:7, 99))
+prime_factors(c(1, 5:7, 99))
 ## [[1]]
 ## integer(0)
 ##
