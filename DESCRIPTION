@@ -4,7 +4,7 @@ Title: Generate and Test for Prime Numbers
 Version: 0.2.0
 Date: 2020-07-23
 Authors@R: c(
-    person("Oliver", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
+    person("Os", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
     person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"))
     )
 Description: Functions for dealing with prime numbers, such as testing whether a

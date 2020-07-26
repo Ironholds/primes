@@ -26,3 +26,6 @@ Be careful of integer overflow. Currently, R uses signed 32-bit integers, so
 numbers greater than 2**31 cannot be represented. This means any primorial
 using prime numbers 29 or greater will fail.
 }
+\author{
+Paul Egeler, MS
+}

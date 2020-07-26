@@ -11,6 +11,9 @@ generate_primes(min = 2L, max)
 
 \item{max}{the upper bound of the sequence.}
 }
+\value{
+An integer vector of prime numbers.
+}
 \description{
 Generates a sequence of prime numbers from \code{min} to \code{max} using a modified
 Sieve of Eratosthenes.
@@ -18,4 +21,7 @@ Sieve of Eratosthenes.
 \examples{
 generate_primes(max = 12)
 ## [1]  2  3  5  7 11
+}
+\author{
+Paul Egeler, MS
 }

@@ -12,6 +12,9 @@ prev_prime(x)
 \arguments{
 \item{x}{a vector of integers from which to start the search.}
 }
+\value{
+An integer vector of prime numbers.
+}
 \description{
 Find the next prime number or previous prime number in a vector.
 }
@@ -25,4 +28,7 @@ next_prime(5)
 
 prev_prime(5:7)
 ## [1] 3 5 5
+}
+\author{
+Paul Egeler, MS
 }

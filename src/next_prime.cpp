@@ -16,6 +16,8 @@
 //' prev_prime(5:7)
 //' ## [1] 3 5 5
 //' @aliases prev_prime
+//' @return An integer vector of prime numbers.
+//' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
 Rcpp::IntegerVector next_prime(std::vector<int> x) {

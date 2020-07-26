@@ -14,41 +14,14 @@
 #' is_prime(1299827)
 #' ## [1] TRUE
 #'
+#' @return A logical vector.
+#' @author Os Keyes and Paul Egeler, MS
 #' @export
 is_prime <- function(x) {
     .Call('_primes_is_prime', PACKAGE = 'primes', x)
 }
 
-#' Prime _k_-tuples
-#'
-#' Use prime _k_-tuples to create lists of twin primes, cousin primes,
-#' prime triplets, and so forth.
-#'
-#' @inheritParams generate_primes
-#' @param tuple an integer vector representing the target _k_-tuple pattern.
-#'
-#' @examples
-#' # All twin primes up to 13
-#' k_tuple(2, 13, c(0,2))
-#' ## [[1]]
-#' ## [1] 3 5
-#' ##
-#' ## [[2]]
-#' ## [1] 5 7
-#' ##
-#' ## [[3]]
-#' ## [1] 11 13
-#'
-#' # Some prime triplets
-#' k_tuple(2, 19, c(0,4,6))
-#' ## [[1]]
-#' ## [1]  7 11 13
-#' ##
-#' ## [[2]]
-#' ## [1] 13 17 19
-#'
-#' @return A list of vectors of prime numbers satisfying the condition of
-#'   `tuple`.
+#' @rdname k_tuple
 #' @export
 k_tuple <- function(min, max, tuple) {
     .Call('_primes_k_tuple', PACKAGE = 'primes', min, max, tuple)
@@ -70,6 +43,8 @@ k_tuple <- function(min, max, tuple) {
 #' prev_prime(5:7)
 #' ## [1] 3 5 5
 #' @aliases prev_prime
+#' @return An integer vector of prime numbers.
+#' @author Paul Egeler, MS
 #' @export
 next_prime <- function(x) {
     .Call('_primes_next_prime', PACKAGE = 'primes', x)
@@ -83,6 +58,37 @@ prev_prime <- function(x) {
 
 prime_count <- function(n, upper_bound) {
     .Call('_primes_prime_count', PACKAGE = 'primes', n, upper_bound)
+}
+
+#' Perform Prime Factorization on a Vector
+#'
+#' Compute the prime factors of elements of an integer vector.
+#'
+#' @param x an integer vector.
+#'
+#' @examples
+#' prime_factor(c(1, 5:7, 99))
+#' ## [[1]]
+#' ## integer(0)
+#' ##
+#' ## [[2]]
+#' ## [1] 5
+#' ##
+#' ## [[3]]
+#' ## [1] 2 3
+#' ##
+#' ## [[4]]
+#' ## [1] 7
+#' ##
+#' ## [[5]]
+#' ## [1]  3  3 11
+#'
+#' @return A list of integer vectors reflecting the prime factorizations of
+#'   each element of the input vector.
+#' @author Paul Egeler, MS
+#' @export
+prime_factor <- function(x) {
+    .Call('_primes_prime_factor', PACKAGE = 'primes', x)
 }
 
 #' @rdname primorial

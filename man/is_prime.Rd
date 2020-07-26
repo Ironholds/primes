@@ -9,6 +9,9 @@ is_prime(x)
 \arguments{
 \item{x}{an integer vector containing elements to be tested for primality.}
 }
+\value{
+A logical vector.
+}
 \description{
 Test whether a vector of numbers is prime or composite.
 }
@@ -19,4 +22,7 @@ is_prime(4:7)
 is_prime(1299827)
 ## [1] TRUE
 
+}
+\author{
+Os Keyes and Paul Egeler, MS
 }

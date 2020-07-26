@@ -4,6 +4,7 @@
 #include <Rcpp.h>
 #include <vector>
 #include <cmath>
+#include <algorithm>
 
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::plugins(cpp11)]]
@@ -17,5 +18,6 @@ int prime_count(int n, bool upper_bound);
 int primorial_n(int n);
 int primorial_p(int n);
 Rcpp::List k_tuple(int min, int max, std::vector<int> tuple);
+Rcpp::List prime_factor(std::vector<int> x);
 
 #endif // R_PKG_PRIMES_H

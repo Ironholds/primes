@@ -1,9 +1,8 @@
-Prime Number Testing and Generation in R
-========================================
+Prime Numbers in R
+==================
 
-**Authors**: Oliver Keyes and Paul Egeler  
+**Authors**: Os Keyes and Paul Egeler  
 **License**: [MIT](http://opensource.org/licenses/MIT)  
-**Status**: In development
 
 ## Description
 

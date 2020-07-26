@@ -14,4 +14,5 @@
 #'   _Details_ for more information.
 #' @name primorial
 #' @aliases primorial_p primorial_n
+#' @author Paul Egeler, MS
 NULL

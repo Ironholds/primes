@@ -32,6 +32,8 @@ bool is_prime_(int x) {
 //' is_prime(1299827)
 //' ## [1] TRUE
 //'
+//' @return A logical vector.
+//' @author Os Keyes and Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
 std::vector<bool> is_prime(std::vector<int> x) {
