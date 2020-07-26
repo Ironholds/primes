@@ -17,11 +17,11 @@ ruth_aaron_pairs <-function(min, max, distinct = FALSE) {
   sums <- vapply(
     prime_factors(n),
     if (distinct) function(x) sum(unique(x)) else function(x) sum(x),
-    integer(1)
+    integer(1L)
   )
 
   lapply(
-    which(c(-1L, diff(sums)) == 0),
-    function(x) n[c(x-1, x)]
+    which(c(-1L, diff(sums)) == 0L),
+    function(x) n[c(x-1L, x)]
   )
 }
