@@ -1,21 +1,23 @@
 Package: primes
 Type: Package
 Title: Generate and Test for Prime Numbers
-Version: 0.2.0
-Date: 2020-07-23
+Version: 0.3.0
+Date: 2020-07-26
 Authors@R: c(
     person("Os", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
-    person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"))
+    person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-6948-9498"))
     )
 Description: Functions for dealing with prime numbers, such as testing whether a
     number is prime and generating a sequence prime numbers.
 License: MIT + file LICENSE
-Suggests: testthat
-LinkingTo: Rcpp
+Depends: R (>= 2.10)
 Imports: Rcpp
+LinkingTo: Rcpp
+Suggests: testthat
 SystemRequirements: C++11
 URL: http://github.com/ironholds/primes
 BugReports: http://github.com/ironholds/primes/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Encoding: UTF-8
+LazyData: true

@@ -1,9 +1,18 @@
 #include "primes.h"
 
-// Estimating pi(x) -- the number of primes <= n
-// This is a quick ball-park estimate
-// `upper_bound = false` is guaranteed to under-estimate for n >= 17.
+static const double prime_count_c = 30 * log(113) / 113;
+
+//' @rdname prime_count
+//' @export
 // [[Rcpp::export]]
 int prime_count(int n, bool upper_bound) {
-  return (upper_bound ? 1.26 : 1) * n / log(n);
+  return (upper_bound ? prime_count_c : 1) * n / log(n);
+}
+
+//' @rdname prime_count
+//' @export
+// [[Rcpp::export]]
+int nth_prime_estimate(int n, bool upper_bound) {
+  double c = upper_bound ? 0 : 1;
+  return n * (log(n * log(n)) - c);
 }

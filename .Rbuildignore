@@ -2,3 +2,5 @@
 ^CONDUCT\.md$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^data-raw$
+.*\.pdf$
