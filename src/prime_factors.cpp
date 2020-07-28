@@ -29,6 +29,9 @@
 //' @export
 // [[Rcpp::export]]
 Rcpp::List prime_factors(std::vector<int> x) {
+  if (x.size() < 1)
+    return Rcpp::List::create();
+
   Rcpp::List out(x.size());
   auto it = out.begin();
   auto primes = generate_primes_(2, *std::max_element(x.begin(), x.end()));

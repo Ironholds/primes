@@ -17,6 +17,9 @@
 //' @export
 // [[Rcpp::export]]
 Rcpp::IntegerVector nth_prime(std::vector<int> x) {
+  if (x.size() < 1)
+    return Rcpp::IntegerVector::create();
+
   auto primes = generate_n_primes(*std::max_element(x.begin(), x.end()));
   auto out = Rcpp::IntegerVector(x.size(), NA_INTEGER);
   auto it  = out.begin();
