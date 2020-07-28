@@ -1,10 +1,11 @@
 Prime Numbers in R
 ==================
 
-[![Travis build status](https://travis-ci.org/pegeler/primes.svg?branch=master)](https://travis-ci.org/pegeler/primes)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/pegeler/primes?branch=master&svg=true)](https://ci.appveyor.com/project/pegeler/primes)
 [![CRAN version](http://www.r-pkg.org/badges/version/primes)](https://cran.r-project.org/package=primes)
 [![Number of Downloads](https://cranlogs.r-pkg.org/badges/grand-total/primes)](https://cran.r-project.org/package=primes)
+[![Travis build status](https://travis-ci.org/pegeler/primes.svg?branch=master)](https://travis-ci.org/pegeler/primes)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/pegeler/primes?branch=master&svg=true)](https://ci.appveyor.com/project/pegeler/primes)
+[![pkgdown](https://github.com/pegeler/primes/workflows/pkgdown/badge.svg)](https://pegeler.github.io/primes/)
 
 
 **Authors**: Os Keyes and Paul Egeler  
