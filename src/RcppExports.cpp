@@ -8,6 +8,17 @@
 
 using namespace Rcpp;
 
+// generate_n_primes
+std::vector<int> generate_n_primes(int n);
+RcppExport SEXP _primes_generate_n_primes(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(generate_n_primes(n));
+    return rcpp_result_gen;
+END_RCPP
+}
 // is_prime
 std::vector<bool> is_prime(std::vector<int> x);
 RcppExport SEXP _primes_is_prime(SEXP xSEXP) {
@@ -54,6 +65,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// nth_prime
+Rcpp::IntegerVector nth_prime(std::vector<int> x);
+RcppExport SEXP _primes_nth_prime(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(nth_prime(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // prime_count
 int prime_count(int n, bool upper_bound);
 RcppExport SEXP _primes_prime_count(SEXP nSEXP, SEXP upper_boundSEXP) {
@@ -66,6 +88,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// nth_prime_estimate
+int nth_prime_estimate(int n, bool upper_bound);
+RcppExport SEXP _primes_nth_prime_estimate(SEXP nSEXP, SEXP upper_boundSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< bool >::type upper_bound(upper_boundSEXP);
+    rcpp_result_gen = Rcpp::wrap(nth_prime_estimate(n, upper_bound));
+    return rcpp_result_gen;
+END_RCPP
+}
 // prime_factors
 Rcpp::List prime_factors(std::vector<int> x);
 RcppExport SEXP _primes_prime_factors(SEXP xSEXP) {
@@ -74,28 +108,6 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(prime_factors(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// primorial_n
-int primorial_n(int n);
-RcppExport SEXP _primes_primorial_n(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(primorial_n(n));
-    return rcpp_result_gen;
-END_RCPP
-}
-// primorial_p
-int primorial_p(int n);
-RcppExport SEXP _primes_primorial_p(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(primorial_p(n));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -127,14 +139,15 @@ RcppExport SEXP _primes_RcppExport_registerCCallable() {
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_primes_generate_n_primes", (DL_FUNC) &_primes_generate_n_primes, 1},
     {"_primes_is_prime", (DL_FUNC) &_primes_is_prime, 1},
     {"_primes_k_tuple", (DL_FUNC) &_primes_k_tuple, 3},
     {"_primes_next_prime", (DL_FUNC) &_primes_next_prime, 1},
     {"_primes_prev_prime", (DL_FUNC) &_primes_prev_prime, 1},
+    {"_primes_nth_prime", (DL_FUNC) &_primes_nth_prime, 1},
     {"_primes_prime_count", (DL_FUNC) &_primes_prime_count, 2},
+    {"_primes_nth_prime_estimate", (DL_FUNC) &_primes_nth_prime_estimate, 2},
     {"_primes_prime_factors", (DL_FUNC) &_primes_prime_factors, 1},
-    {"_primes_primorial_n", (DL_FUNC) &_primes_primorial_n, 1},
-    {"_primes_primorial_p", (DL_FUNC) &_primes_primorial_p, 1},
     {"_primes_generate_primes_", (DL_FUNC) &_primes_generate_primes_, 2},
     {"_primes_RcppExport_registerCCallable", (DL_FUNC) &_primes_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}

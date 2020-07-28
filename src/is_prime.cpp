@@ -8,7 +8,7 @@ bool is_prime_(int x) {
   } else if (x % 2 == 0 || x % 3 == 0) {
     out = false;
   } else {
-    for(int i=5, stop=sqrt(x); i <= stop; i+=6) {
+    for(int i=5, stop=sqrt((double) x); i <= stop; i+=6) {
       if (x % i == 0 || x % (i + 2) == 0) {
         out = false;
         break;

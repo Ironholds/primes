@@ -17,7 +17,7 @@ std::vector<int> generate_primes_(int min, int max) {
 
   int len = (max + 1)/2 - 1;
   std::vector<bool> a(len, true);
-  for (int i=3, stop=sqrt(max); i <= stop; i+=2)
+  for (int i=3, stop=sqrt((double) max); i <= stop; i+=2)
     if (a[num2index(i)] == true)
       for (int p=i*i, inc=i*2; p <= max; p+=inc)
         a[num2index(p)] = false;

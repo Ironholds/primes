@@ -1,9 +1,8 @@
 Prime Numbers in R
 ==================
 
-[![CRAN\_version](http://www.r-pkg.org/badges/version/primes)](https://cran.r-project.org/package=primes)
-[![Number\_of\_Downloads](https://cranlogs.r-pkg.org/badges/grand-total/primes)](https://cran.r-project.org/package=primes)
-
+[![CRAN version](http://www.r-pkg.org/badges/version/primes)](https://cran.r-project.org/package=primes)
+[![Number of Downloads](https://cranlogs.r-pkg.org/badges/grand-total/primes)](https://cran.r-project.org/package=primes)
 
 **Authors**: Os Keyes and Paul Egeler  
 **License**: [MIT](http://opensource.org/licenses/MIT)  
@@ -11,7 +10,17 @@ Prime Numbers in R
 ## Description
 
 This R package has several utility functions for dealing with prime numbers,
-such as checking for primality and generating prime numbers.
+such as checking for primality and generating prime numbers. Additional
+functions include:
+
+- finding prime factors and Ruth-Aaron pairs
+- finding next and previous prime numbers in the series
+- finding or estimating the n<sup>th</sup> prime
+- estimating the number of primes less than or equal to an arbitrary number
+- computing primorials
+- finding prime k-tuples (e.g., twin primes).
+
+The package also provides an R dataset containing the first one thousand primes.
 
 ## Installation
 
