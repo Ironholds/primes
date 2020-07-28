@@ -4,3 +4,9 @@
 ^\.Rproj\.user$
 ^data-raw$
 .*\.pdf$
+^\.travis\.yml$
+^appveyor\.yml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
