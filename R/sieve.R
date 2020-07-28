@@ -1,8 +1,8 @@
 #' Generate a Sequence of Prime Numbers
 #'
-#' Generate a sequence of prime numbers from `min` to `max` using a fast
-#' implementation of the Sieve of Eratosthenes or generate a vector of
-#' the first `n` primes.
+#' Generate a sequence of prime numbers from `min` to `max` or generate a vector
+#' of the first `n` primes. Both functions use a fast implementation of the
+#' Sieve of Eratosthenes.
 #'
 #' @param min the lower bound of the sequence.
 #' @param max the upper bound of the sequence.

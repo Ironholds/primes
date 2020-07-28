@@ -66,13 +66,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // nth_prime
-int nth_prime(int n);
-RcppExport SEXP _primes_nth_prime(SEXP nSEXP) {
+Rcpp::IntegerVector nth_prime(std::vector<int> x);
+RcppExport SEXP _primes_nth_prime(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(nth_prime(n));
+    Rcpp::traits::input_parameter< std::vector<int> >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(nth_prime(x));
     return rcpp_result_gen;
 END_RCPP
 }

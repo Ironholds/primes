@@ -20,9 +20,9 @@ generate_primes(min = 2L, max)
 An integer vector of prime numbers.
 }
 \description{
-Generate a sequence of prime numbers from \code{min} to \code{max} using a fast
-implementation of the Sieve of Eratosthenes or generate a vector of
-the first \code{n} primes.
+Generate a sequence of prime numbers from \code{min} to \code{max} or generate a vector
+of the first \code{n} primes. Both functions use a fast implementation of the
+Sieve of Eratosthenes.
 }
 \examples{
 generate_primes(max = 12)

@@ -2,14 +2,30 @@
 
 //' Get the n-th Prime from the Sequence of Primes.
 //'
-//' Get the n-th prime (\eqn{p_n}) in the sequence of primes.
+//' Get the n-th prime, \eqn{p_n}, in the sequence of primes.
 //'
-//' @param n an integer.
-//' @return An integer vector of length 1.
+//' @param x an integer vector.
+//'
+//' @examples
+//' nth_prime(5)
+//' ## [1] 11
+//'
+//' nth_prime(c(1:3, 7))
+//' ## [1]  2  3  5 17
+//' @return An integer vector.
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-int nth_prime(int n) {
-  auto out = generate_n_primes(n);
-  return out.size() ? *(out.end() - 1) : NA_INTEGER;
+Rcpp::IntegerVector nth_prime(std::vector<int> x) {
+  auto primes = generate_n_primes(*std::max_element(x.begin(), x.end()));
+  auto out = Rcpp::IntegerVector(x.size(), NA_INTEGER);
+  auto it  = out.begin();
+
+  for (auto n : x) {
+    if (n > 0)
+      *it = primes[n - 1];
+    it++;
+  }
+
+  return out;
 }

@@ -64,14 +64,21 @@ prev_prime <- function(x) {
 
 #' Get the n-th Prime from the Sequence of Primes.
 #'
-#' Get the n-th prime (\eqn{p_n}) in the sequence of primes.
+#' Get the n-th prime, \eqn{p_n}, in the sequence of primes.
 #'
-#' @param n an integer.
-#' @return An integer vector of length 1.
+#' @param x an integer vector.
+#'
+#' @examples
+#' nth_prime(5)
+#' ## [1] 11
+#'
+#' nth_prime(c(1:3, 7))
+#' ## [1]  2  3  5 17
+#' @return An integer vector.
 #' @author Paul Egeler, MS
 #' @export
-nth_prime <- function(n) {
-    .Call('_primes_nth_prime', PACKAGE = 'primes', n)
+nth_prime <- function(x) {
+    .Call('_primes_nth_prime', PACKAGE = 'primes', x)
 }
 
 #' @rdname prime_count

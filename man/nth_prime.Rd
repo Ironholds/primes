@@ -4,16 +4,23 @@
 \alias{nth_prime}
 \title{Get the n-th Prime from the Sequence of Primes.}
 \usage{
-nth_prime(n)
+nth_prime(x)
 }
 \arguments{
-\item{n}{an integer.}
+\item{x}{an integer vector.}
 }
 \value{
-An integer vector of length 1.
+An integer vector.
 }
 \description{
-Get the n-th prime (\eqn{p_n}) in the sequence of primes.
+Get the n-th prime, \eqn{p_n}, in the sequence of primes.
+}
+\examples{
+nth_prime(5)
+## [1] 11
+
+nth_prime(c(1:3, 7))
+## [1]  2  3  5 17
 }
 \author{
 Paul Egeler, MS

@@ -11,7 +11,7 @@
 
 std::vector<int> generate_primes_(int min, int max);
 std::vector<int> generate_n_primes(int n);
-int nth_prime(int n);
+Rcpp::IntegerVector nth_prime(std::vector<int> x);
 bool is_prime_(int x);
 std::vector<bool> is_prime(std::vector<int> x);
 Rcpp::IntegerVector next_prime(std::vector<int> x);
