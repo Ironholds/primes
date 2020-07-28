@@ -2,12 +2,12 @@
 #'
 #' Find pairs of consecutive integers where the prime factors sum to the same
 #' value. For example, (5, 6) are Ruth-Aaron pairs because the prime factors
-#' 5 == 2 + 3.
+#' \eqn{5 = 2 + 3}{5 == 2 + 3}.
 #'
 #' @param min an integer representing the minimum number to check.
 #' @param max an integer representing the maximum number to check.
-#' @param distinct a logical indicating whether to consider repeating primes or
-#'   only distinct prime number factors.
+#' @param distinct a logical indicating whether to consider repeating prime
+#'   factors or only distinct prime number factors.
 #' @author Paul Egeler, MS
 #' @return A List of integer pairs.
 #' @export
