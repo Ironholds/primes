@@ -8,7 +8,11 @@ Authors@R: c(
     person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-6948-9498"))
     )
 Description: Functions for dealing with prime numbers, such as testing whether a
-    number is prime and generating a sequence prime numbers.
+    number is prime and generating a sequence prime numbers. Additional functions
+    include finding prime factors and Ruth-Aaron pairs, finding next and previous
+    prime numbers in the series, finding or estimating the nth prime, estimating
+    the number of primes less than or equal to an arbitrary number, computing
+    primorials, and prime k-tuples (e.g., twin primes).
 License: MIT + file LICENSE
 Depends: R (>= 2.10)
 Imports: Rcpp
