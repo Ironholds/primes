@@ -14,6 +14,9 @@ primorial_p(n)
 \item{n}{an integer indicating the numbers to be used in the computation. See
 \emph{Details} for more information.}
 }
+\value{
+A numeric vector of length 1.
+}
 \description{
 Computes the primorial for prime numbers and natural numbers.
 }

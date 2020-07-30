@@ -8,6 +8,8 @@
 #'
 #' @param n an integer indicating the numbers to be used in the computation. See
 #'   _Details_ for more information.
+#'
+#' @return A numeric vector of length 1.
 #' @name primorial
 #' @author Paul Egeler, MS
 NULL
