@@ -16,7 +16,7 @@
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector nth_prime(std::vector<int> x) {
+Rcpp::IntegerVector nth_prime(const Rcpp::IntegerVector& x) {
   if (x.size() < 1)
     return Rcpp::IntegerVector::create();
 

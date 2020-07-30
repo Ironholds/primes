@@ -20,10 +20,10 @@
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector next_prime(std::vector<int> x) {
+Rcpp::IntegerVector next_prime(const Rcpp::IntegerVector& x) {
 
   Rcpp::IntegerVector out(x.size());
-  Rcpp::IntegerVector::iterator it = out.begin();
+  auto it = out.begin();
 
   for (auto n : x) {
     while (!is_prime_(++n))
@@ -37,10 +37,10 @@ Rcpp::IntegerVector next_prime(std::vector<int> x) {
 //' @rdname next_prime
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector prev_prime(std::vector<int> x) {
+Rcpp::IntegerVector prev_prime(const Rcpp::IntegerVector& x) {
 
   Rcpp::IntegerVector out(x.size(), NA_INTEGER);
-  Rcpp::IntegerVector::iterator it = out.begin();
+  auto it = out.begin();
 
   for (auto n : x) {
     while (!is_prime_(--n) && n >= 2)

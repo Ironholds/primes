@@ -28,7 +28,7 @@
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-Rcpp::List prime_factors(std::vector<int> x) {
+Rcpp::List prime_factors(const Rcpp::IntegerVector& x) {
   if (x.size() < 1)
     return Rcpp::List::create();
 

@@ -8,9 +8,8 @@ int gcd_(int m, int n) {
     std::swap(m, n);
 
   // Euclid's Algorithm
-  int r;
   while (n > 0) {
-    r = m % n;
+    int r = m % n;
     m = n;
     n = r;
   }
@@ -35,7 +34,11 @@ int gcd_(int m, int n) {
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector gcd(Rcpp::IntegerVector m, Rcpp::IntegerVector n) {
+Rcpp::IntegerVector gcd(const Rcpp::IntegerVector& m,
+                        const Rcpp::IntegerVector& n) {
+  if (!m.size() || !n.size())
+    return Rcpp::IntegerVector::create();
+
   int len = std::max(m.size(), n.size());
   Rcpp::IntegerVector out(len);
   auto a = Rcpp::rep_len(m, len);
@@ -50,7 +53,11 @@ Rcpp::IntegerVector gcd(Rcpp::IntegerVector m, Rcpp::IntegerVector n) {
 //' @rdname gcd
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector lcm(Rcpp::IntegerVector m, Rcpp::IntegerVector n) {
+Rcpp::IntegerVector lcm(const Rcpp::IntegerVector& m,
+                        const Rcpp::IntegerVector& n) {
+  if (!m.size() || !n.size())
+    return Rcpp::IntegerVector::create();
+
   int len = std::max(m.size(), n.size());
   Rcpp::IntegerVector out(len);
   auto a = Rcpp::rep_len(m, len);
@@ -65,6 +72,7 @@ Rcpp::IntegerVector lcm(Rcpp::IntegerVector m, Rcpp::IntegerVector n) {
 //' @rdname gcd
 //' @export
 // [[Rcpp::export]]
-Rcpp::LogicalVector is_coprime(Rcpp::IntegerVector m, Rcpp::IntegerVector n) {
+Rcpp::LogicalVector is_coprime(const Rcpp::IntegerVector& m,
+                               const Rcpp::IntegerVector& n) {
   return gcd(m, n) == 1;
 }
