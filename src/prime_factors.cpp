@@ -34,18 +34,19 @@ Rcpp::List prime_factors(const Rcpp::IntegerVector& x) {
 
   Rcpp::List out(x.size());
   auto it = out.begin();
-  auto primes = generate_primes_(2, *std::max_element(x.begin(), x.end()));
+  int max = *std::max_element(x.begin(), x.end());
+  auto primes = generate_primes_(2, max > 8 ? sqrt((double) max) : 2);
 
   for (auto n : x) {
     std::vector<int> factors;
-    auto p = primes.begin();
-    while (n > 1) {
+    int stop = sqrt((double) n);
+    for (auto p = primes.begin(); p != primes.end() && *p <= stop && n > 1; ++p)
       while (n % *p == 0) {
         factors.push_back(*p);
         n /= *p;
       }
-      p++;
-    }
+    if (n > 1)
+      factors.push_back(n);
     *(it++) = factors;
   }
 
