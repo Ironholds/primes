@@ -1,6 +1,7 @@
 context("Prime factors")
 
 test_that("Create a vector of factors", {
+  expect_equal(prime_factors(2), list(2))
   expect_equal(
     prime_factors(c(-1:2, 7:11)),
     list(
