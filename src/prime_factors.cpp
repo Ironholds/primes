@@ -29,7 +29,7 @@
 //' @export
 // [[Rcpp::export]]
 Rcpp::List prime_factors(const Rcpp::IntegerVector& x) {
-  if (x.size() < 1)
+  if (!x.size())
     return Rcpp::List::create();
 
   Rcpp::List out(x.size());
