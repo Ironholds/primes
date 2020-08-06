@@ -22,12 +22,24 @@ return an integer vector while \code{is_coprime} returns a logical vector.
 }
 \description{
 These functions provide vectorized computations for the greatest common
-divisor (\code{gcd}), least common multiple (\code{lcm}), and coprimality.
+divisor (\code{gcd}), least common multiple (\code{lcm}), and coprimality. Coprime
+numbers are also called \emph{mutually prime} or \emph{relatively prime} numbers.
 }
 \details{
-The greatest common divisor uses Euclid's algorithm, a fast and widely used
-method. The least common multiple and coprimality are computed using the
-GCD.
+The greatest common divisor uses Euclid's algorithm, a fast and widely
+used method. The least common multiple and coprimality are computed using
+the gcd, where \eqn{lcm = \frac{a}{gcd(a, b)} \times b}{lcm = a / gcd(a, b) * b}
+and two numbers are coprime when \eqn{gcd = 1}.
+}
+\examples{
+gcd(c(18, 22, 49, 13), 42)
+## [1] 6 2 7 1
+
+lcm(60, 90)
+## [1] 180
+
+is_coprime(60, c(77, 90))
+## [1]  TRUE FALSE
 }
 \author{
 Paul Egeler, MS

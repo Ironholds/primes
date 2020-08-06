@@ -8,14 +8,25 @@ gcd_ <- function(m, n) {
 #' Find the Greatest Common Divisor, Least Common Multiple, or Coprimality
 #'
 #' These functions provide vectorized computations for the greatest common
-#' divisor (`gcd`), least common multiple (`lcm`), and coprimality.
+#' divisor (`gcd`), least common multiple (`lcm`), and coprimality. Coprime
+#' numbers are also called _mutually prime_ or _relatively prime_ numbers.
 #'
-#' The greatest common divisor uses Euclid's algorithm, a fast and widely used
-#' method. The least common multiple and coprimality are computed using the
-#' GCD.
+#' The greatest common divisor uses Euclid's algorithm, a fast and widely
+#' used method. The least common multiple and coprimality are computed using
+#' the gcd, where \eqn{lcm = \frac{a}{gcd(a, b)} \times b}{lcm = a / gcd(a, b) * b}
+#' and two numbers are coprime when \eqn{gcd = 1}.
 #'
 #' @param m,n integer vectors.
 #'
+#'@examples
+#' gcd(c(18, 22, 49, 13), 42)
+#' ## [1] 6 2 7 1
+#'
+#' lcm(60, 90)
+#' ## [1] 180
+#'
+#' is_coprime(60, c(77, 90))
+#' ## [1]  TRUE FALSE
 #' @return A vector of the length of longest input vector. If one
 #'   vector is shorter, it will be recycled. The `gcd` and `lcm` functions
 #'   return an integer vector while `is_coprime` returns a logical vector.
