@@ -3,14 +3,14 @@
 \name{gcd}
 \alias{gcd}
 \alias{lcm}
-\alias{is_coprime}
+\alias{coprime}
 \title{Find the Greatest Common Divisor, Least Common Multiple, or Coprimality}
 \usage{
 gcd(m, n)
 
 lcm(m, n)
 
-is_coprime(m, n)
+coprime(m, n)
 }
 \arguments{
 \item{m, n}{integer vectors.}
@@ -18,7 +18,7 @@ is_coprime(m, n)
 \value{
 A vector of the length of longest input vector. If one
 vector is shorter, it will be recycled. The \code{gcd} and \code{lcm} functions
-return an integer vector while \code{is_coprime} returns a logical vector.
+return an integer vector while \code{coprime} returns a logical vector.
 }
 \description{
 These functions provide vectorized computations for the greatest common
@@ -38,7 +38,7 @@ gcd(c(18, 22, 49, 13), 42)
 lcm(60, 90)
 ## [1] 180
 
-is_coprime(60, c(77, 90))
+coprime(60, c(77, 90))
 ## [1]  TRUE FALSE
 }
 \author{

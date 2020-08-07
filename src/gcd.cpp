@@ -37,11 +37,11 @@ int gcd_(int m, int n) {
 //' lcm(60, 90)
 //' ## [1] 180
 //'
-//' is_coprime(60, c(77, 90))
+//' coprime(60, c(77, 90))
 //' ## [1]  TRUE FALSE
 //' @return A vector of the length of longest input vector. If one
 //'   vector is shorter, it will be recycled. The `gcd` and `lcm` functions
-//'   return an integer vector while `is_coprime` returns a logical vector.
+//'   return an integer vector while `coprime` returns a logical vector.
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
@@ -83,7 +83,7 @@ Rcpp::IntegerVector lcm(const Rcpp::IntegerVector& m,
 //' @rdname gcd
 //' @export
 // [[Rcpp::export]]
-Rcpp::LogicalVector is_coprime(const Rcpp::IntegerVector& m,
-                               const Rcpp::IntegerVector& n) {
+Rcpp::LogicalVector coprime(const Rcpp::IntegerVector& m,
+                            const Rcpp::IntegerVector& n) {
   return gcd(m, n) == 1;
 }

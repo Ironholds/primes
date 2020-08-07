@@ -25,11 +25,11 @@ gcd_ <- function(m, n) {
 #' lcm(60, 90)
 #' ## [1] 180
 #'
-#' is_coprime(60, c(77, 90))
+#' coprime(60, c(77, 90))
 #' ## [1]  TRUE FALSE
 #' @return A vector of the length of longest input vector. If one
 #'   vector is shorter, it will be recycled. The `gcd` and `lcm` functions
-#'   return an integer vector while `is_coprime` returns a logical vector.
+#'   return an integer vector while `coprime` returns a logical vector.
 #' @author Paul Egeler, MS
 #' @export
 gcd <- function(m, n) {
@@ -44,8 +44,8 @@ lcm <- function(m, n) {
 
 #' @rdname gcd
 #' @export
-is_coprime <- function(m, n) {
-    .Call('_primes_is_coprime', PACKAGE = 'primes', m, n)
+coprime <- function(m, n) {
+    .Call('_primes_coprime', PACKAGE = 'primes', m, n)
 }
 
 #' @rdname generate_primes
