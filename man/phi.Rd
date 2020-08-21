@@ -7,7 +7,7 @@
 phi(n)
 }
 \arguments{
-\item{n}{An integer vector.}
+\item{n}{an integer vector.}
 }
 \value{
 An integer vector.
