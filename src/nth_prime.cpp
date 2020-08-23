@@ -16,19 +16,16 @@
 //' @author Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector nth_prime(std::vector<int> x) {
-  if (x.size() < 1)
+Rcpp::IntegerVector nth_prime(const Rcpp::IntegerVector& x) {
+  if (!x.size())
     return Rcpp::IntegerVector::create();
 
   auto primes = generate_n_primes(*std::max_element(x.begin(), x.end()));
-  auto out = Rcpp::IntegerVector(x.size(), NA_INTEGER);
+  auto out = Rcpp::IntegerVector(x.size());
   auto it  = out.begin();
 
-  for (auto n : x) {
-    if (n > 0)
-      *it = primes[n - 1];
-    it++;
-  }
+  for (auto n : x)
+    *(it++) = n > 0 ? primes[n - 1] : NA_INTEGER;
 
   return out;
 }

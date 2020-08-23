@@ -2,21 +2,17 @@
 
 bool is_prime_(int x) {
 
-  bool out = true;
-  if (x <= 3) {
-    out = (x > 1);
-  } else if (x % 2 == 0 || x % 3 == 0) {
-    out = false;
-  } else {
-    for(int i=5, stop=sqrt((double) x); i <= stop; i+=6) {
-      if (x % i == 0 || x % (i + 2) == 0) {
-        out = false;
-        break;
-      }
-    }
-  }
+  if (x < 4)
+    return x > 1;
 
-  return out;
+  if (x % 2 == 0 || x % 3 == 0)
+    return false;
+
+  for(int i=5, stop=sqrt((double) x); i <= stop; i+=6)
+    if (x % i == 0 || x % (i + 2) == 0)
+      return false;
+
+  return true;
 }
 
 //' Test for Prime Numbers
@@ -36,13 +32,13 @@ bool is_prime_(int x) {
 //' @author Os Keyes and Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-std::vector<bool> is_prime(std::vector<int> x) {
+Rcpp::LogicalVector is_prime(const Rcpp::IntegerVector& x) {
 
-  std::vector<bool> out;
-  out.reserve(x.size());
+  int len = x.size();
+  Rcpp::LogicalVector out(len);
 
-  for (auto n : x)
-    out.push_back(is_prime_(n));
+  for (int i=0; i < len; i++)
+    out[i] = is_prime_(x[i]);
 
   return out;
 }

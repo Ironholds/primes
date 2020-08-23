@@ -18,7 +18,9 @@ functions include:
 - finding or estimating the n<sup>th</sup> prime
 - estimating the number of primes less than or equal to an arbitrary number
 - computing primorials
-- finding prime k-tuples (e.g., twin primes).
+- finding prime k-tuples (e.g., twin primes)
+- finding the greatest common divisor and least common multiple
+- testing whether two numbers are coprime
 
 The package also provides an R dataset containing the first one thousand primes.
 
