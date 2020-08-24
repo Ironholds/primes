@@ -1,8 +1,8 @@
 Package: primes
 Type: Package
-Title: Generate and Test for Prime Numbers
+Title: Fast Functions for Prime Numbers
 Version: 1.2.1
-Date: 2020-08-21
+Date: 2020-08-24
 Authors@R: c(
     person("Os", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
     person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-6948-9498"))
@@ -15,7 +15,7 @@ Description: Fast functions for dealing with prime numbers, such as testing
     arbitrary number, computing primorials, prime k-tuples (e.g., twin primes),
     finding the greatest common divisor and least common multiple, testing
     whether two numbers are coprime, and computing Euler's totient function.
-    Most functions are vectorized.
+    Most functions are vectorized for speed and convenience.
 License: MIT + file LICENSE
 Depends: R (>= 2.10)
 Imports: Rcpp
