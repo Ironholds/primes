@@ -1,7 +1,7 @@
 #' Euler's Totient Function
 #'
 #' Compute Euler's Totient Function (\eqn{\phi(n)}{phi(n)}). Provides the
-#' \eqn{k} number of integers that are coprime with \eqn{n} such that
+#' count of \eqn{k} integers that are coprime with \eqn{n} such that
 #' \eqn{1 \le k \le n}{1 <= k <= n} and \eqn{gcd(n,k) = 1}{gcd(n, k) == 1}.
 #'
 #' @param n an integer vector.
