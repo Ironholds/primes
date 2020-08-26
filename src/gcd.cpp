@@ -75,7 +75,7 @@ Rcpp::IntegerVector lcm(const Rcpp::IntegerVector& m,
   auto b = Rcpp::rep_len(n, len);
 
   for (int i=0; i < len; i++)
-    out[i] = a[i] == 0 || b[i] == 0 ? 0 : a[i] / gcd_(a[i], b[i]) * b[i];
+    out[i] = a[i] == 0 || b[i] == 0 ? 0 : abs(a[i] / gcd_(a[i], b[i]) * b[i]);
 
   return out;
 }
