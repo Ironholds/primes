@@ -2,13 +2,14 @@
 % Please edit documentation in R/RcppExports.R
 \name{gcd}
 \alias{gcd}
+\alias{scm}
 \alias{lcm}
 \alias{coprime}
-\title{Find the Greatest Common Divisor, Least Common Multiple, or Coprimality}
+\title{Find the Greatest Common Divisor, Smallest Common Multiple, or Coprimality}
 \usage{
 gcd(m, n)
 
-lcm(m, n)
+scm(m, n)
 
 coprime(m, n)
 }
@@ -17,25 +18,26 @@ coprime(m, n)
 }
 \value{
 A vector of the length of longest input vector. If one
-vector is shorter, it will be recycled. The \code{gcd} and \code{lcm} functions
+vector is shorter, it will be recycled. The \code{gcd} and \code{scm} functions
 return an integer vector while \code{coprime} returns a logical vector.
 }
 \description{
 These functions provide vectorized computations for the greatest common
-divisor (\code{gcd}), least common multiple (\code{lcm}), and coprimality. Coprime
+divisor (\code{gcd}), smallest common multiple (\code{scm}), and coprimality. Coprime
 numbers are also called \emph{mutually prime} or \emph{relatively prime} numbers.
+The smallest common multiple is often called the \emph{least common multiple}.
 }
 \details{
 The greatest common divisor uses Euclid's algorithm, a fast and widely
-used method. The least common multiple and coprimality are computed using
-the gcd, where \eqn{lcm = \frac{a}{gcd(a, b)} \times b}{lcm = a / gcd(a, b) * b}
+used method. The smallest common multiple and coprimality are computed using
+the gcd, where \eqn{scm = \frac{a}{gcd(a, b)} \times b}{scm = a / gcd(a, b) * b}
 and two numbers are coprime when \eqn{gcd = 1}.
 }
 \examples{
 gcd(c(18, 22, 49, 13), 42)
 ## [1] 6 2 7 1
 
-lcm(60, 90)
+scm(60, 90)
 ## [1] 180
 
 coprime(60, c(77, 90))

@@ -5,15 +5,16 @@ gcd_ <- function(m, n) {
     .Call('_primes_gcd_', PACKAGE = 'primes', m, n)
 }
 
-#' Find the Greatest Common Divisor, Least Common Multiple, or Coprimality
+#' Find the Greatest Common Divisor, Smallest Common Multiple, or Coprimality
 #'
 #' These functions provide vectorized computations for the greatest common
-#' divisor (`gcd`), least common multiple (`lcm`), and coprimality. Coprime
+#' divisor (`gcd`), smallest common multiple (`scm`), and coprimality. Coprime
 #' numbers are also called _mutually prime_ or _relatively prime_ numbers.
+#' The smallest common multiple is often called the _least common multiple_.
 #'
 #' The greatest common divisor uses Euclid's algorithm, a fast and widely
-#' used method. The least common multiple and coprimality are computed using
-#' the gcd, where \eqn{lcm = \frac{a}{gcd(a, b)} \times b}{lcm = a / gcd(a, b) * b}
+#' used method. The smallest common multiple and coprimality are computed using
+#' the gcd, where \eqn{scm = \frac{a}{gcd(a, b)} \times b}{scm = a / gcd(a, b) * b}
 #' and two numbers are coprime when \eqn{gcd = 1}.
 #'
 #' @param m,n integer vectors.
@@ -22,13 +23,13 @@ gcd_ <- function(m, n) {
 #' gcd(c(18, 22, 49, 13), 42)
 #' ## [1] 6 2 7 1
 #'
-#' lcm(60, 90)
+#' scm(60, 90)
 #' ## [1] 180
 #'
 #' coprime(60, c(77, 90))
 #' ## [1]  TRUE FALSE
 #' @return A vector of the length of longest input vector. If one
-#'   vector is shorter, it will be recycled. The `gcd` and `lcm` functions
+#'   vector is shorter, it will be recycled. The `gcd` and `scm` functions
 #'   return an integer vector while `coprime` returns a logical vector.
 #' @author Paul Egeler, MS
 #' @export
@@ -37,9 +38,10 @@ gcd <- function(m, n) {
 }
 
 #' @rdname gcd
+#' @aliases lcm
 #' @export
-lcm <- function(m, n) {
-    .Call('_primes_lcm', PACKAGE = 'primes', m, n)
+scm <- function(m, n) {
+    .Call('_primes_scm', PACKAGE = 'primes', m, n)
 }
 
 #' @rdname gcd
