@@ -19,7 +19,7 @@ functions include:
 - estimating the number of primes less than or equal to an arbitrary number
 - computing primorials
 - finding prime k-tuples (e.g., twin primes)
-- finding the greatest common divisor and least common multiple
+- finding the greatest common divisor and smallest (least) common multiple
 - testing whether two numbers are coprime
 - computing Euler's totient (phi)
 

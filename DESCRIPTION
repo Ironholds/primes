@@ -13,9 +13,9 @@ Description: Fast functions for dealing with prime numbers, such as testing
     finding next and previous prime numbers in the series, finding or estimating
     the nth prime, estimating the number of primes less than or equal to an
     arbitrary number, computing primorials, prime k-tuples (e.g., twin primes),
-    finding the greatest common divisor and least common multiple, testing
-    whether two numbers are coprime, and computing Euler's totient function.
-    Most functions are vectorized for speed and convenience.
+    finding the greatest common divisor and smallest (least) common multiple,
+    testing whether two numbers are coprime, and computing Euler's totient
+    function. Most functions are vectorized for speed and convenience.
 License: MIT + file LICENSE
 Depends: R (>= 2.10)
 Imports: Rcpp

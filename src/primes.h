@@ -24,7 +24,7 @@ Rcpp::List k_tuple(int min, int max, std::vector<int> tuple);
 Rcpp::List prime_factors(const Rcpp::IntegerVector& x);
 int gcd_(int m, int n);
 Rcpp::IntegerVector gcd(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
-Rcpp::IntegerVector lcm(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
+Rcpp::IntegerVector scm(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
 Rcpp::LogicalVector coprime(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
 
 #endif // R_PKG_PRIMES_H
