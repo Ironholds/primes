@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Find the Greatest Common Divisor, Least Common Multiple, or Coprimality — gcd • primes</title>
+<title>Find the Greatest Common Divisor, Smallest Common Multiple, or Coprimality — gcd • primes</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,11 @@
 
 
 
-<meta property="og:title" content="Find the Greatest Common Divisor, Least Common Multiple, or Coprimality — gcd" />
+<meta property="og:title" content="Find the Greatest Common Divisor, Smallest Common Multiple, or Coprimality — gcd" />
 <meta property="og:description" content="These functions provide vectorized computations for the greatest common
-divisor (gcd), least common multiple (lcm), and coprimality. Coprime
-numbers are also called mutually prime or relatively prime numbers." />
+divisor (gcd), smallest common multiple (scm), and coprimality. Coprime
+numbers are also called mutually prime or relatively prime numbers.
+The smallest common multiple is often called the least common multiple." />
 
 
 
@@ -74,7 +75,7 @@ numbers are also called mutually prime or relatively prime numbers." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">primes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2</span>
       </span>
     </div>
 
@@ -110,20 +111,21 @@ numbers are also called mutually prime or relatively prime numbers." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Find the Greatest Common Divisor, Least Common Multiple, or Coprimality</h1>
+    <h1>Find the Greatest Common Divisor, Smallest Common Multiple, or Coprimality</h1>
     <small class="dont-index">Source: <a href='http://github.com/ironholds/primes/blob/master/R/RcppExports.R'><code>R/RcppExports.R</code></a></small>
     <div class="hidden name"><code>gcd.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>These functions provide vectorized computations for the greatest common
-divisor (<code>gcd</code>), least common multiple (<code>lcm</code>), and coprimality. Coprime
-numbers are also called <em>mutually prime</em> or <em>relatively prime</em> numbers.</p>
+divisor (<code>gcd</code>), smallest common multiple (<code>scm</code>), and coprimality. Coprime
+numbers are also called <em>mutually prime</em> or <em>relatively prime</em> numbers.
+The smallest common multiple is often called the <em>least common multiple</em>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>gcd</span>(<span class='no'>m</span>, <span class='no'>n</span>)
 
-<span class='fu'>lcm</span>(<span class='no'>m</span>, <span class='no'>n</span>)
+<span class='fu'>scm</span>(<span class='no'>m</span>, <span class='no'>n</span>)
 
 <span class='fu'>coprime</span>(<span class='no'>m</span>, <span class='no'>n</span>)</pre>
 
@@ -139,19 +141,19 @@ numbers are also called <em>mutually prime</em> or <em>relatively prime</em> num
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A vector of the length of longest input vector. If one
-vector is shorter, it will be recycled. The <code>gcd</code> and <code>lcm</code> functions
+vector is shorter, it will be recycled. The <code>gcd</code> and <code>scm</code> functions
 return an integer vector while <code>coprime</code> returns a logical vector.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The greatest common divisor uses Euclid's algorithm, a fast and widely
-used method. The least common multiple and coprimality are computed using
-the gcd, where \(lcm = \frac{a}{gcd(a, b)} \times b\)
+used method. The smallest common multiple and coprimality are computed using
+the gcd, where \(scm = \frac{a}{gcd(a, b)} \times b\)
 and two numbers are coprime when \(gcd = 1\).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>gcd</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>18</span>, <span class='fl'>22</span>, <span class='fl'>49</span>, <span class='fl'>13</span>), <span class='fl'>42</span>)</div><div class='output co'>#&gt; [1] 6 2 7 1</div><div class='input'><span class='co'>## [1] 6 2 7 1</span>
 
-<span class='fu'>lcm</span>(<span class='fl'>60</span>, <span class='fl'>90</span>)</div><div class='output co'>#&gt; [1] 180</div><div class='input'><span class='co'>## [1] 180</span>
+<span class='fu'>scm</span>(<span class='fl'>60</span>, <span class='fl'>90</span>)</div><div class='output co'>#&gt; [1] 180</div><div class='input'><span class='co'>## [1] 180</span>
 
 <span class='fu'>coprime</span>(<span class='fl'>60</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>77</span>, <span class='fl'>90</span>))</div><div class='output co'>#&gt; [1]  TRUE FALSE</div><div class='input'>## [1]  TRUE FALSE
 </div></pre>
