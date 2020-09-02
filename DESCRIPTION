@@ -1,7 +1,7 @@
 Package: primes
 Type: Package
 Title: Fast Functions for Prime Numbers
-Version: 1.2.2
+Version: 1.1.0
 Date: 2020-08-31
 Authors@R: c(
     person("Os", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
@@ -22,8 +22,8 @@ Imports: Rcpp
 LinkingTo: Rcpp
 Suggests: testthat
 SystemRequirements: C++11
-URL: http://github.com/ironholds/primes
-BugReports: http://github.com/ironholds/primes/issues
+URL: https://github.com/ironholds/primes
+BugReports: https://github.com/ironholds/primes/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Encoding: UTF-8

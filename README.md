@@ -1,11 +1,11 @@
 Fast Functions for Prime Numbers in R
 =====================================
 
-[![CRAN version](http://www.r-pkg.org/badges/version/primes)](https://cran.r-project.org/package=primes)
+[![CRAN version](https://www.r-pkg.org/badges/version/primes)](https://cran.r-project.org/package=primes)
 [![Number of Downloads](https://cranlogs.r-pkg.org/badges/grand-total/primes)](https://cran.r-project.org/package=primes)
 
 **Authors**: Os Keyes and Paul Egeler  
-**License**: [MIT](http://opensource.org/licenses/MIT)  
+**License**: [MIT](https://opensource.org/licenses/MIT)  
 
 ## Description
 
