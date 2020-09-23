@@ -17,33 +17,30 @@ int gcd_(int m, int n) {
   return m;
 }
 
-//' Find the Greatest Common Divisor, Smallest Common Multiple, or Coprimality
-//'
-//' These functions provide vectorized computations for the greatest common
-//' divisor (`gcd`), smallest common multiple (`scm`), and coprimality. Coprime
-//' numbers are also called _mutually prime_ or _relatively prime_ numbers.
-//' The smallest common multiple is often called the _least common multiple_.
-//'
-//' The greatest common divisor uses Euclid's algorithm, a fast and widely
-//' used method. The smallest common multiple and coprimality are computed using
-//' the gcd, where \eqn{scm = \frac{a}{gcd(a, b)} \times b}{scm = a / gcd(a, b) * b}
-//' and two numbers are coprime when \eqn{gcd = 1}.
-//'
-//' @param m,n integer vectors.
-//'
-//'@examples
-//' gcd(c(18, 22, 49, 13), 42)
-//' ## [1] 6 2 7 1
-//'
-//' scm(60, 90)
-//' ## [1] 180
-//'
-//' coprime(60, c(77, 90))
-//' ## [1]  TRUE FALSE
-//' @return A vector of the length of longest input vector. If one
-//'   vector is shorter, it will be recycled. The `gcd` and `scm` functions
-//'   return an integer vector while `coprime` returns a logical vector.
-//' @author Paul Egeler, MS
+// [[Rcpp::export]]
+int Rgcd_(const Rcpp::IntegerVector& x) {
+  int out = x[0];
+  for (auto it=x.begin() + 1; it != x.end() && out != 1; ++it) {
+    out = gcd_(out, *it);
+  }
+  return out;
+}
+
+// [[Rcpp::export]]
+int scm_(int m, int n) {
+  return m == 0 || n == 0 ? 0 : abs(m / gcd_(m, n) * n);
+}
+
+// [[Rcpp::export]]
+int Rscm_(const Rcpp::IntegerVector& x) {
+  int out = x[0];
+  for (auto it=x.begin() + 1; it != x.end(); ++it) {
+    out = scm_(out, *it);
+  }
+  return out;
+}
+
+//' @rdname gcd
 //' @export
 // [[Rcpp::export]]
 Rcpp::IntegerVector gcd(const Rcpp::IntegerVector& m,
@@ -77,7 +74,7 @@ Rcpp::IntegerVector scm(const Rcpp::IntegerVector& m,
   auto b = Rcpp::rep_len(n, len);
 
   for (int i=0; i < len; i++)
-    out[i] = a[i] == 0 || b[i] == 0 ? 0 : abs(a[i] / gcd_(a[i], b[i]) * b[i]);
+    out[i] = scm_(a[i], b[i]);
 
   return out;
 }
