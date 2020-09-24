@@ -41,6 +41,7 @@ used method. The smallest common multiple and coprimality are computed using
 the gcd, where \eqn{scm = \frac{a}{gcd(a, b)} \times b}{scm = a / gcd(a, b) * b}
 and two numbers are coprime when \eqn{gcd = 1}.
 
+The \code{gcd}, \code{scm}, and \code{coprime} functions perform element-wise computation.
 The \code{Rgcd} and \code{Rscm} functions perform \code{gcd} and \code{scm} over multiple values
 using reduction. That is, they compute the greatest common divisor and least
 common multiple for an arbitrary number of integers based on the properties

@@ -10,6 +10,7 @@
 #' the gcd, where \eqn{scm = \frac{a}{gcd(a, b)} \times b}{scm = a / gcd(a, b) * b}
 #' and two numbers are coprime when \eqn{gcd = 1}.
 #'
+#' The `gcd`, `scm`, and `coprime` functions perform element-wise computation.
 #' The `Rgcd` and `Rscm` functions perform `gcd` and `scm` over multiple values
 #' using reduction. That is, they compute the greatest common divisor and least
 #' common multiple for an arbitrary number of integers based on the properties
