@@ -74,7 +74,7 @@ Sieve of Eratosthenes." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">primes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
       </span>
     </div>
 
@@ -121,9 +121,9 @@ of the first <code>n</code> primes. Both functions use a fast implementation of 
 Sieve of Eratosthenes.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>generate_n_primes</span>(<span class='no'>n</span>)
+    <pre class="usage"><span class='fu'>generate_n_primes</span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span>
 
-<span class='fu'>generate_primes</span>(<span class='kw'>min</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='no'>max</span>)</pre>
+<span class='fu'>generate_primes</span><span class='op'>(</span>min <span class='op'>=</span> <span class='fl'>2L</span>, <span class='va'>max</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,11 +145,16 @@ Sieve of Eratosthenes.</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An integer vector of prime numbers.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Paul Egeler, MS</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>generate_primes</span>(<span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>12</span>)</div><div class='output co'>#&gt; [1]  2  3  5  7 11</div><div class='input'><span class='co'>## [1]  2  3  5  7 11</span>
+    <pre class="examples"><div class='input'><span class='fu'>generate_primes</span><span class='op'>(</span>max <span class='op'>=</span> <span class='fl'>12</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1]  2  3  5  7 11</div><div class='input'><span class='co'>## [1]  2  3  5  7 11</span>
 
-<span class='fu'>generate_n_primes</span>(<span class='fl'>5</span>)</div><div class='output co'>#&gt; [1]  2  3  5  7 11</div><div class='input'>## [1]  2  3  5  7 11
+<span class='fu'>generate_n_primes</span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1]  2  3  5  7 11</div><div class='input'><span class='co'>## [1]  2  3  5  7 11</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -166,7 +171,7 @@ Sieve of Eratosthenes.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

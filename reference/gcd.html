@@ -75,7 +75,7 @@ The smallest common multiple is often called the least common multiple." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">primes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
       </span>
     </div>
 
@@ -112,7 +112,7 @@ The smallest common multiple is often called the least common multiple." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Find the Greatest Common Divisor, Smallest Common Multiple, or Coprimality</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ironholds/primes/blob/master/R/RcppExports.R'><code>R/RcppExports.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/ironholds/primes/blob/master/R/RcppExports.R'><code>R/RcppExports.R</code></a>, <a href='https://github.com/ironholds/primes/blob/master/R/gcd.R'><code>R/gcd.R</code></a></small>
     <div class="hidden name"><code>gcd.Rd</code></div>
     </div>
 
@@ -123,39 +123,67 @@ numbers are also called <em>mutually prime</em> or <em>relatively prime</em> num
 The smallest common multiple is often called the <em>least common multiple</em>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gcd</span>(<span class='no'>m</span>, <span class='no'>n</span>)
+    <pre class="usage"><span class='fu'>gcd</span><span class='op'>(</span><span class='va'>m</span>, <span class='va'>n</span><span class='op'>)</span>
 
-<span class='fu'>scm</span>(<span class='no'>m</span>, <span class='no'>n</span>)
+<span class='fu'>scm</span><span class='op'>(</span><span class='va'>m</span>, <span class='va'>n</span><span class='op'>)</span>
 
-<span class='fu'>coprime</span>(<span class='no'>m</span>, <span class='no'>n</span>)</pre>
+<span class='fu'>coprime</span><span class='op'>(</span><span class='va'>m</span>, <span class='va'>n</span><span class='op'>)</span>
+
+<span class='fu'>Rgcd</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
+
+<span class='fu'>Rscm</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>m, n</th>
+      <th>m, n, ...</th>
       <td><p>integer vectors.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of the length of longest input vector. If one
-vector is shorter, it will be recycled. The <code>gcd</code> and <code>scm</code> functions
-return an integer vector while <code>coprime</code> returns a logical vector.</p>
+    <p>The functions <code>gcd</code>, <code>scm</code>, and <code>coprime</code> return a vector of the
+length of longest input vector. If one vector is shorter, it will be
+recycled. The <code>gcd</code> and <code>scm</code> functions return an integer vector while
+<code>coprime</code> returns a logical vector. The reduction funtions <code>Rgcd</code> and
+<code>Rscm</code> return a single integer.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The greatest common divisor uses Euclid's algorithm, a fast and widely
 used method. The smallest common multiple and coprimality are computed using
 the gcd, where \(scm = \frac{a}{gcd(a, b)} \times b\)
 and two numbers are coprime when \(gcd = 1\).</p>
+<p>The <code>gcd</code>, <code>scm</code>, and <code>coprime</code> functions perform element-wise computation.
+The <code>Rgcd</code> and <code>Rscm</code> functions perform <code>gcd</code> and <code>scm</code> over multiple values
+using reduction. That is, they compute the greatest common divisor and least
+common multiple for an arbitrary number of integers based on the properties
+\(gcd(a_1, a_2, ..., a_n) = gcd(gcd(a_1, a_2, ...), a_n)\) and
+\(scm(a_1, a_2, ..., a_n) = scm(scm(a_1, a_2, ...), a_n)\). The binary
+operation is applied to two elements; then the result is used as the first
+operand in a call with the next element. This is done iteratively until all
+elements are used. It is idiomatically equivalent to <code><a href='https://rdrr.io/r/base/funprog.html'>Reduce(gcd, x)</a></code> or
+<code><a href='https://rdrr.io/r/base/funprog.html'>Reduce(scm, x)</a></code>, where <code>x</code> is a vector of integers, but much faster.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Paul Egeler, MS</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>gcd</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>18</span>, <span class='fl'>22</span>, <span class='fl'>49</span>, <span class='fl'>13</span>), <span class='fl'>42</span>)</div><div class='output co'>#&gt; [1] 6 2 7 1</div><div class='input'><span class='co'>## [1] 6 2 7 1</span>
+    <pre class="examples"><div class='input'><span class='fu'>gcd</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>18</span>, <span class='fl'>22</span>, <span class='fl'>49</span>, <span class='fl'>13</span><span class='op'>)</span>, <span class='fl'>42</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6 2 7 1</div><div class='input'><span class='co'>## [1] 6 2 7 1</span>
 
-<span class='fu'>scm</span>(<span class='fl'>60</span>, <span class='fl'>90</span>)</div><div class='output co'>#&gt; [1] 180</div><div class='input'><span class='co'>## [1] 180</span>
+<span class='fu'>Rgcd</span><span class='op'>(</span><span class='fl'>18</span>, <span class='fl'>24</span>, <span class='fl'>36</span>, <span class='fl'>12</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='co'>## [1] 6</span>
 
-<span class='fu'>coprime</span>(<span class='fl'>60</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>77</span>, <span class='fl'>90</span>))</div><div class='output co'>#&gt; [1]  TRUE FALSE</div><div class='input'>## [1]  TRUE FALSE
+<span class='fu'>scm</span><span class='op'>(</span><span class='fl'>60</span>, <span class='fl'>90</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 180</div><div class='input'><span class='co'>## [1] 180</span>
+
+<span class='fu'>Rscm</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 2520</div><div class='input'><span class='co'>## [1] 2520</span>
+
+<span class='fu'>coprime</span><span class='op'>(</span><span class='fl'>60</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>77</span>, <span class='fl'>90</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1]  TRUE FALSE</div><div class='input'><span class='co'>## [1]  TRUE FALSE</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -172,7 +200,7 @@ and two numbers are coprime when \(gcd = 1\).</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

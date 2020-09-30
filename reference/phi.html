@@ -74,7 +74,7 @@ count of \(k\) integers that are coprime with \(n\) such that
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">primes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
       </span>
     </div>
 
@@ -121,7 +121,7 @@ count of \(k\) integers that are coprime with \(n\) such that
 \(1 \le k \le n\) and \(gcd(n,k) = 1\).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>phi</span>(<span class='no'>n</span>)</pre>
+    <pre class="usage"><span class='fu'>phi</span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -143,11 +143,16 @@ https://en.wikipedia.org/wiki/Euler%27s_totient_function (Accessed 21 Aug
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='gcd.html'>gcd</a></code>, <code><a href='gcd.html'>coprime</a></code>, <code><a href='prime_factors.html'>prime_factors</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Paul Egeler, MS</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>phi</span>(<span class='fl'>12</span>)</div><div class='output co'>#&gt; [1] 4</div><div class='input'><span class='co'>## [1] 4</span>
+    <pre class="examples"><div class='input'><span class='fu'>phi</span><span class='op'>(</span><span class='fl'>12</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 4</div><div class='input'><span class='co'>## [1] 4</span>
 
-<span class='fu'>phi</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>9</span>, <span class='fl'>10</span>, <span class='fl'>142</span>))</div><div class='output co'>#&gt; [1]  6  4 70</div><div class='input'>## [1]  6  4 70
+<span class='fu'>phi</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>9</span>, <span class='fl'>10</span>, <span class='fl'>142</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1]  6  4 70</div><div class='input'><span class='co'>## [1]  6  4 70</span>
 
 </div></pre>
   </div>
@@ -165,7 +170,7 @@ https://en.wikipedia.org/wiki/Euler%27s_totient_function (Accessed 21 Aug
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

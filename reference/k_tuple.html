@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Prime <em>k</em>-tuples — k_tuple • primes</title>
+<title>Prime k-tuples — k_tuple • primes</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Prime <em>k</em>-tuples — k_tuple" />
+<meta property="og:title" content="Prime k-tuples — k_tuple" />
 <meta property="og:description" content="Use prime k-tuples to create lists of twin primes, cousin primes,
 prime triplets, and so forth." />
 
@@ -73,7 +73,7 @@ prime triplets, and so forth." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">primes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
       </span>
     </div>
 
@@ -119,17 +119,17 @@ prime triplets, and so forth." />
 prime triplets, and so forth.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>k_tuple</span>(<span class='no'>min</span>, <span class='no'>max</span>, <span class='no'>tuple</span>)
+    <pre class="usage"><span class='fu'>k_tuple</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span>, <span class='va'>tuple</span><span class='op'>)</span>
 
-<span class='fu'>twin_primes</span>(<span class='no'>min</span>, <span class='no'>max</span>)
+<span class='fu'>twin_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
 
-<span class='fu'>cousin_primes</span>(<span class='no'>min</span>, <span class='no'>max</span>)
+<span class='fu'>cousin_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
 
-<span class='fu'>sexy_primes</span>(<span class='no'>min</span>, <span class='no'>max</span>)
+<span class='fu'>sexy_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
 
-<span class='fu'>sexy_prime_triplets</span>(<span class='no'>min</span>, <span class='no'>max</span>)
+<span class='fu'>sexy_prime_triplets</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
 
-<span class='fu'>third_cousin_primes</span>(<span class='no'>min</span>, <span class='no'>max</span>)</pre>
+<span class='fu'>third_cousin_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -167,10 +167,14 @@ relationships. They are listed below.</p>
 
 <p>The term "third cousin primes" is of the author's coinage. There is no
 canonical name for that relationship to the author's knowledge.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Paul Egeler, MS</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># All twin primes up to 13</span>
-<span class='fu'>twin_primes</span>(<span class='fl'>2</span>, <span class='fl'>13</span>) <span class='co'># Identical to `k_tuple(2, 13, c(0,2))`</span></div><div class='output co'>#&gt; [[1]]
+<span class='fu'>twin_primes</span><span class='op'>(</span><span class='fl'>2</span>, <span class='fl'>13</span><span class='op'>)</span> <span class='co'># Identical to `k_tuple(2, 13, c(0,2))`</span>
+</div><div class='output co'>#&gt; [[1]]
 #&gt; [1] 3 5
 #&gt; 
 #&gt; [[2]]
@@ -188,16 +192,17 @@ canonical name for that relationship to the author's knowledge.</p>
 <span class='co'>## [1] 11 13</span>
 
 <span class='co'># Some prime triplets</span>
-<span class='fu'>k_tuple</span>(<span class='fl'>2</span>, <span class='fl'>19</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>4</span>,<span class='fl'>6</span>))</div><div class='output co'>#&gt; [[1]]
+<span class='fu'>k_tuple</span><span class='op'>(</span><span class='fl'>2</span>, <span class='fl'>19</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>4</span>,<span class='fl'>6</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [[1]]
 #&gt; [1]  7 11 13
 #&gt; 
 #&gt; [[2]]
 #&gt; [1] 13 17 19
-#&gt; </div><div class='input'>## [[1]]
-## [1]  7 11 13
-##
-## [[2]]
-## [1] 13 17 19
+#&gt; </div><div class='input'><span class='co'>## [[1]]</span>
+<span class='co'>## [1]  7 11 13</span>
+<span class='co'>##</span>
+<span class='co'>## [[2]]</span>
+<span class='co'>## [1] 13 17 19</span>
 
 </div></pre>
   </div>
@@ -215,7 +220,7 @@ canonical name for that relationship to the author's knowledge.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
