@@ -20,6 +20,40 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// Rgcd_
+int Rgcd_(const Rcpp::IntegerVector& x);
+RcppExport SEXP _primes_Rgcd_(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(Rgcd_(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// scm_
+int scm_(int m, int n);
+RcppExport SEXP _primes_scm_(SEXP mSEXP, SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type m(mSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(scm_(m, n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Rscm_
+int Rscm_(const Rcpp::IntegerVector& x);
+RcppExport SEXP _primes_Rscm_(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(Rscm_(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // gcd
 Rcpp::IntegerVector gcd(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
 RcppExport SEXP _primes_gcd(SEXP mSEXP, SEXP nSEXP) {
@@ -188,6 +222,9 @@ RcppExport SEXP _primes_RcppExport_registerCCallable() {
 
 static const R_CallMethodDef CallEntries[] = {
     {"_primes_gcd_", (DL_FUNC) &_primes_gcd_, 2},
+    {"_primes_Rgcd_", (DL_FUNC) &_primes_Rgcd_, 1},
+    {"_primes_scm_", (DL_FUNC) &_primes_scm_, 2},
+    {"_primes_Rscm_", (DL_FUNC) &_primes_Rscm_, 1},
     {"_primes_gcd", (DL_FUNC) &_primes_gcd, 2},
     {"_primes_scm", (DL_FUNC) &_primes_scm, 2},
     {"_primes_coprime", (DL_FUNC) &_primes_coprime, 2},

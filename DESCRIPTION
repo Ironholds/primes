@@ -1,8 +1,8 @@
 Package: primes
 Type: Package
 Title: Fast Functions for Prime Numbers
-Version: 1.1.0
-Date: 2020-08-31
+Version: 1.2.0
+Date: 2020-09-23
 Authors@R: c(
     person("Os", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
     person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-6948-9498"))
