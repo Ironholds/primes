@@ -17,7 +17,7 @@ test_that("Prime cousins are correct", {
 
 test_that("Sexy prime triplets are correct", {
   expect_equal(
-    sexy_prime_triplets(0,29),
-    list(c(5L, 11L, 17L), c(7L, 13L, 19L), c(11L, 17L, 23L), c(17L, 23L, 29L))
+    sexy_prime_triplets(0,29), # p + 18 must be composite
+    list(c(7L, 13L, 19L), c(17L, 23L, 29L))
   )
 })
