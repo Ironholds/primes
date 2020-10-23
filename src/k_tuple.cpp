@@ -12,16 +12,20 @@ Rcpp::List k_tuple(int min, int max, std::vector<int> tuple) {
   if (tuple[0] != 0)
     Rcpp::stop("the first element of `tuple` must be zero.");
 
-  for (auto it = primes.begin(); it != (primes.end() - tuple.size() + 1); ++it) {
+  for (auto it = primes.begin(); it != primes.end(); ++it) {
     bool match = true;
-    for (int j=1; j < tuple.size(); j++) {
-      if (*(it + j) - *it != tuple[j]) {
+
+    for (auto jt = tuple.begin() + 1; jt != tuple.end(); ++jt) {
+      if (!binary_search(it, primes.end(), *it + *jt)) {
         match = false;
         break;
       }
     }
+
     if (match) {
-      std::vector<int> matching_set(it, it + tuple.size());
+      std::vector<int> matching_set(tuple.begin(), tuple.end());
+      for (auto& m : matching_set)
+        m += *it;
       out.push_back(matching_set);
     }
   }
