@@ -125,6 +125,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// sexy_prime_triplets
+Rcpp::List sexy_prime_triplets(int min, int max);
+RcppExport SEXP _primes_sexy_prime_triplets(SEXP minSEXP, SEXP maxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type min(minSEXP);
+    Rcpp::traits::input_parameter< int >::type max(maxSEXP);
+    rcpp_result_gen = Rcpp::wrap(sexy_prime_triplets(min, max));
+    return rcpp_result_gen;
+END_RCPP
+}
 // next_prime
 Rcpp::IntegerVector next_prime(const Rcpp::IntegerVector& x);
 RcppExport SEXP _primes_next_prime(SEXP xSEXP) {
@@ -231,6 +243,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_primes_generate_n_primes", (DL_FUNC) &_primes_generate_n_primes, 1},
     {"_primes_is_prime", (DL_FUNC) &_primes_is_prime, 1},
     {"_primes_k_tuple", (DL_FUNC) &_primes_k_tuple, 3},
+    {"_primes_sexy_prime_triplets", (DL_FUNC) &_primes_sexy_prime_triplets, 2},
     {"_primes_next_prime", (DL_FUNC) &_primes_next_prime, 1},
     {"_primes_prev_prime", (DL_FUNC) &_primes_prev_prime, 1},
     {"_primes_nth_prime", (DL_FUNC) &_primes_nth_prime, 1},

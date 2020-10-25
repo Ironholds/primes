@@ -2,22 +2,22 @@
 % Please edit documentation in R/RcppExports.R, R/k_tuple.R
 \name{k_tuple}
 \alias{k_tuple}
+\alias{sexy_prime_triplets}
 \alias{twin_primes}
 \alias{cousin_primes}
 \alias{sexy_primes}
-\alias{sexy_prime_triplets}
 \alias{third_cousin_primes}
 \title{Prime \emph{k}-tuples}
 \usage{
 k_tuple(min, max, tuple)
+
+sexy_prime_triplets(min, max)
 
 twin_primes(min, max)
 
 cousin_primes(min, max)
 
 sexy_primes(min, max)
-
-sexy_prime_triplets(min, max)
 
 third_cousin_primes(min, max)
 }
@@ -46,7 +46,8 @@ relationships. They are listed below.
 \item \code{cousin_primes}: represents \code{c(0,4)}.
 \item \code{third_cousin_primes}: represents \code{c(0,8)}.
 \item \code{sexy_primes}: represents \code{c(0,6)}.
-\item \code{sexy_prime_triplets}: represents \code{c(0,6,12)}.
+\item \code{sexy_prime_triplets}: represents \code{c(0,6,12)}. (This relationship is
+unique in that \eqn{p + 18} is guaranteed to be composite.)
 }
 
 The term "third cousin primes" is of the author's coinage. There is no

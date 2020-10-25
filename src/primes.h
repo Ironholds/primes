@@ -21,6 +21,7 @@ Rcpp::IntegerVector prev_prime(const Rcpp::IntegerVector& x);
 int prime_count(int n, bool upper_bound);
 int nth_prime_estimate(int n, bool upper_bound);
 Rcpp::List k_tuple(int min, int max, std::vector<int> tuple);
+Rcpp::List sexy_prime_triplets(int min, int max);
 Rcpp::List prime_factors(const Rcpp::IntegerVector& x);
 int gcd_(int m, int n);
 int scm_(int m, int n);
