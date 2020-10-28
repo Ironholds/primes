@@ -73,7 +73,7 @@ prime triplets, and so forth." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">primes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
       </span>
     </div>
 
@@ -121,13 +121,13 @@ prime triplets, and so forth.</p>
 
     <pre class="usage"><span class='fu'>k_tuple</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span>, <span class='va'>tuple</span><span class='op'>)</span>
 
+<span class='fu'>sexy_prime_triplets</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
+
 <span class='fu'>twin_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
 
 <span class='fu'>cousin_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
 
 <span class='fu'>sexy_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
-
-<span class='fu'>sexy_prime_triplets</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span>
 
 <span class='fu'>third_cousin_primes</span><span class='op'>(</span><span class='va'>min</span>, <span class='va'>max</span><span class='op'>)</span></pre>
 
@@ -162,7 +162,8 @@ relationships. They are listed below.</p>
 <li><p><code>cousin_primes</code>: represents <code><a href='https://rdrr.io/r/base/c.html'>c(0,4)</a></code>.</p></li>
 <li><p><code>third_cousin_primes</code>: represents <code><a href='https://rdrr.io/r/base/c.html'>c(0,8)</a></code>.</p></li>
 <li><p><code>sexy_primes</code>: represents <code><a href='https://rdrr.io/r/base/c.html'>c(0,6)</a></code>.</p></li>
-<li><p><code>sexy_prime_triplets</code>: represents <code><a href='https://rdrr.io/r/base/c.html'>c(0,6,12)</a></code>.</p></li>
+<li><p><code>sexy_prime_triplets</code>: represents <code><a href='https://rdrr.io/r/base/c.html'>c(0,6,12)</a></code>. (This relationship is
+unique in that \(p + 18\) is guaranteed to be composite.)</p></li>
 </ul>
 
 <p>The term "third cousin primes" is of the author's coinage. There is no
