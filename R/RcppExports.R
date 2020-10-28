@@ -68,6 +68,12 @@ k_tuple <- function(min, max, tuple) {
     .Call('_primes_k_tuple', PACKAGE = 'primes', min, max, tuple)
 }
 
+#' @rdname k_tuple
+#' @export
+sexy_prime_triplets <- function(min, max) {
+    .Call('_primes_sexy_prime_triplets', PACKAGE = 'primes', min, max)
+}
+
 #' Find the Next and Previous Prime Numbers
 #'
 #' Find the next prime numbers or previous prime numbers over a vector.

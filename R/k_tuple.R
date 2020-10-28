@@ -12,7 +12,8 @@
 #'   \item `cousin_primes`: represents `c(0,4)`.
 #'   \item `third_cousin_primes`: represents `c(0,8)`.
 #'   \item `sexy_primes`: represents `c(0,6)`.
-#'   \item `sexy_prime_triplets`: represents `c(0,6,12)`.
+#'   \item `sexy_prime_triplets`: represents `c(0,6,12)`. (This relationship is
+#'   unique in that \eqn{p + 18} is guaranteed to be composite.)
 #' }
 #'
 #' The term "third cousin primes" is of the author's coinage. There is no
@@ -45,6 +46,7 @@
 #'   `tuple`.
 #' @author Paul Egeler, MS
 #' @name k_tuple
+# function(x) lapply(which(is_prime(x) & is_prime(x+2)), function(n) c(n, n+2))
 NULL
 
 #' @rdname k_tuple
@@ -61,11 +63,6 @@ cousin_primes <- function(min, max)
 #' @export
 sexy_primes <- function(min, max)
   k_tuple(min, max, c(0,6))
-
-#' @rdname k_tuple
-#' @export
-sexy_prime_triplets <- function(min, max)
-  k_tuple(min, max, c(0,6,12))
 
 #' @rdname k_tuple
 #' @export
