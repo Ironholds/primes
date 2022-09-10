@@ -8,6 +8,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // gcd_
 int gcd_(int m, int n);
 RcppExport SEXP _primes_gcd_(SEXP mSEXP, SEXP nSEXP) {
@@ -194,17 +199,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// prime_factors
-Rcpp::List prime_factors(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_prime_factors(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(prime_factors(x));
-    return rcpp_result_gen;
-END_RCPP
-}
 // generate_primes_
 std::vector<int> generate_primes_(int min, int max);
 RcppExport SEXP _primes_generate_primes_(SEXP minSEXP, SEXP maxSEXP) {
@@ -249,7 +243,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_primes_nth_prime", (DL_FUNC) &_primes_nth_prime, 1},
     {"_primes_prime_count", (DL_FUNC) &_primes_prime_count, 2},
     {"_primes_nth_prime_estimate", (DL_FUNC) &_primes_nth_prime_estimate, 2},
-    {"_primes_prime_factors", (DL_FUNC) &_primes_prime_factors, 1},
     {"_primes_generate_primes_", (DL_FUNC) &_primes_generate_primes_, 2},
     {"_primes_RcppExport_registerCCallable", (DL_FUNC) &_primes_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
