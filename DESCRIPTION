@@ -1,8 +1,8 @@
 Package: primes
 Type: Package
 Title: Fast Functions for Prime Numbers
-Version: 1.4.0
-Date: 2022-09-10
+Version: 1.5.0
+Date: 2022-12-27
 Authors@R: c(
     person("Os", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
     person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-6948-9498"))
@@ -21,10 +21,9 @@ Depends: R (>= 2.10)
 Imports: Rcpp
 LinkingTo: Rcpp
 Suggests: testthat
-SystemRequirements: C++11
 URL: https://github.com/ironholds/primes
 BugReports: https://github.com/ironholds/primes/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Encoding: UTF-8
 LazyData: true

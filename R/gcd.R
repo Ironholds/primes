@@ -41,7 +41,7 @@
 #' @return The functions `gcd`, `scm`, and `coprime` return a vector of the
 #'   length of longest input vector. If one vector is shorter, it will be
 #'   recycled. The `gcd` and `scm` functions return an integer vector while
-#'   `coprime` returns a logical vector. The reduction funtions `Rgcd` and
+#'   `coprime` returns a logical vector. The reduction functions `Rgcd` and
 #'   `Rscm` return a single integer.
 #' @author Paul Egeler, MS
 #' @name gcd

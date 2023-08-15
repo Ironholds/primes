@@ -1,3 +1,6 @@
+#include <Rcpp.h>
+#include <vector>
+
 #include "primes.h"
 
 //' @rdname generate_primes
