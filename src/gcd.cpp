@@ -1,9 +1,13 @@
-#include "primes.h"
+#include <Rcpp.h>
+#include <algorithm>  // max, swap
+#include <numeric>    // accumulate
+#include <cstdlib>    // abs
+
 
 // [[Rcpp::export]]
 int gcd_(int m, int n) {
 
-  m = abs(m); n = abs(n);
+  m = abs(m), n = abs(n);
   if (n > m)
     std::swap(m, n);
 
@@ -18,9 +22,9 @@ int gcd_(int m, int n) {
 }
 
 // [[Rcpp::export]]
-int Rgcd_(const Rcpp::IntegerVector& x) {
+int Rgcd_(const Rcpp::IntegerVector &x) {
   int out = x[0];
-  for (auto it=x.begin() + 1; it != x.end() && out != 1; ++it) {
+  for (auto it = x.begin() + 1; it != x.end() && out != 1; ++it) {
     out = gcd_(out, *it);
   }
   return out;
@@ -32,28 +36,29 @@ int scm_(int m, int n) {
 }
 
 // [[Rcpp::export]]
-int Rscm_(const Rcpp::IntegerVector& x) {
-  int out = x[0];
-  for (auto it=x.begin() + 1; it != x.end(); ++it) {
-    out = scm_(out, *it);
-  }
-  return out;
+int Rscm_(const Rcpp::IntegerVector &x) {
+  return std::accumulate(
+    x.begin() + 1,
+    x.end(),
+    *x.begin(),
+    scm_
+  );
 }
 
 //' @rdname gcd
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector gcd(const Rcpp::IntegerVector& m,
-                        const Rcpp::IntegerVector& n) {
+Rcpp::IntegerVector gcd(const Rcpp::IntegerVector &m,
+                        const Rcpp::IntegerVector &n) {
   if (!m.size() || !n.size())
-    return Rcpp::IntegerVector::create();
+    return {};
 
-  int len = std::max(m.size(), n.size());
+  R_xlen_t len = std::max(m.size(), n.size());
   Rcpp::IntegerVector out(len);
   auto a = Rcpp::rep_len(m, len);
   auto b = Rcpp::rep_len(n, len);
 
-  for (int i=0; i < len; i++)
+  for (R_xlen_t i = 0; i < len; i++)
     out[i] = gcd_(a[i], b[i]);
 
   return out;
@@ -63,17 +68,17 @@ Rcpp::IntegerVector gcd(const Rcpp::IntegerVector& m,
 //' @aliases lcm
 //' @export
 // [[Rcpp::export]]
-Rcpp::IntegerVector scm(const Rcpp::IntegerVector& m,
-                        const Rcpp::IntegerVector& n) {
+Rcpp::IntegerVector scm(const Rcpp::IntegerVector &m,
+                        const Rcpp::IntegerVector &n) {
   if (!m.size() || !n.size())
-    return Rcpp::IntegerVector::create();
+    return {};
 
-  int len = std::max(m.size(), n.size());
+  R_xlen_t len = std::max(m.size(), n.size());
   Rcpp::IntegerVector out(len);
   auto a = Rcpp::rep_len(m, len);
   auto b = Rcpp::rep_len(n, len);
 
-  for (int i=0; i < len; i++)
+  for (R_xlen_t i = 0; i < len; i++)
     out[i] = scm_(a[i], b[i]);
 
   return out;
@@ -82,7 +87,7 @@ Rcpp::IntegerVector scm(const Rcpp::IntegerVector& m,
 //' @rdname gcd
 //' @export
 // [[Rcpp::export]]
-Rcpp::LogicalVector coprime(const Rcpp::IntegerVector& m,
-                            const Rcpp::IntegerVector& n) {
+Rcpp::LogicalVector coprime(const Rcpp::IntegerVector &m,
+                            const Rcpp::IntegerVector &n) {
   return gcd(m, n) == 1;
 }

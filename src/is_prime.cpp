@@ -1,4 +1,5 @@
-#include "primes.h"
+#include <Rcpp.h>
+#include <cmath>
 
 bool is_prime_(int x) {
 
@@ -8,7 +9,7 @@ bool is_prime_(int x) {
   if (x % 2 == 0 || x % 3 == 0)
     return false;
 
-  for(int i=5, stop=sqrt((double) x); i <= stop; i+=6)
+  for (int i = 5, stop = sqrt((double)x); i <= stop; i += 6)
     if (x % i == 0 || x % (i + 2) == 0)
       return false;
 
@@ -32,12 +33,12 @@ bool is_prime_(int x) {
 //' @author Os Keyes and Paul Egeler, MS
 //' @export
 // [[Rcpp::export]]
-Rcpp::LogicalVector is_prime(const Rcpp::IntegerVector& x) {
+Rcpp::LogicalVector is_prime(const Rcpp::IntegerVector &x) {
 
-  int len = x.size();
+  R_xlen_t len = x.size();
   Rcpp::LogicalVector out(len);
 
-  for (int i=0; i < len; i++)
+  for (R_xlen_t i = 0; i < len; i++)
     out[i] = is_prime_(x[i]);
 
   return out;

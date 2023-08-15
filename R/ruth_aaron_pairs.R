@@ -11,17 +11,17 @@
 #' @author Paul Egeler, MS
 #' @return A List of integer pairs.
 #' @export
-# ruth_aaron_pairs <-function(min, max, distinct = FALSE) {
-#   n <- seq(min, max)
-#
-#   sums <- vapply(
-#     prime_factors(n),
-#     if (distinct) function(x) sum(unique(x)) else function(x) sum(x),
-#     integer(1L)
-#   )
-#
-#   lapply(
-#     which(c(-1L, diff(sums)) == 0L),
-#     function(x) n[c(x-1L, x)]
-#   )
-# }
+ruth_aaron_pairs <-function(min, max, distinct = FALSE) {
+  n <- seq(min, max)
+
+  sums <- vapply(
+    prime_factors(n),
+    if (distinct) function(x) sum(unique(x)) else function(x) sum(x),
+    integer(1L)
+  )
+
+  lapply(
+    which(c(-1L, diff(sums)) == 0L),
+    function(x) n[c(x-1L, x)]
+  )
+}

@@ -19,12 +19,12 @@
 #' @seealso \code{\link{gcd}}, \code{\link{coprime}}, \code{\link{prime_factors}}
 #' @return An integer vector.
 #' @author Paul Egeler, MS
-#'
-# phi <- function(n) {
-#   factors <- prime_factors(n)
-#   vapply(
-#     seq_along(n),
-#     function(i) as.integer(n[i] * prod(1 - 1 / unique(factors[[i]]))),
-#     integer(1)
-#   )
-# }
+#' @export
+phi <- function(n) {
+  factors <- prime_factors(n)
+  vapply(
+    seq_along(n),
+    function(i) as.integer(n[i] * prod(1 - 1 / unique(factors[[i]]))),
+    integer(1)
+  )
+}

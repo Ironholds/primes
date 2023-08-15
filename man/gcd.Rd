@@ -26,7 +26,7 @@ Rscm(...)
 The functions \code{gcd}, \code{scm}, and \code{coprime} return a vector of the
 length of longest input vector. If one vector is shorter, it will be
 recycled. The \code{gcd} and \code{scm} functions return an integer vector while
-\code{coprime} returns a logical vector. The reduction funtions \code{Rgcd} and
+\code{coprime} returns a logical vector. The reduction functions \code{Rgcd} and
 \code{Rscm} return a single integer.
 }
 \description{
