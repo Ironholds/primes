@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 #include <cmath>
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 bool is_prime_(int x) {
 
   if (x < 4)

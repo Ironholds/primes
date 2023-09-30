@@ -15,224 +15,674 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // gcd_
 int gcd_(int m, int n);
-RcppExport SEXP _primes_gcd_(SEXP mSEXP, SEXP nSEXP) {
+static SEXP _primes_gcd__try(SEXP mSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type m(mSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(gcd_(m, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_gcd_(SEXP mSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_gcd__try(mSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // Rgcd_
 int Rgcd_(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_Rgcd_(SEXP xSEXP) {
+static SEXP _primes_Rgcd__try(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(Rgcd_(x));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_Rgcd_(SEXP xSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_Rgcd__try(xSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // scm_
 int scm_(int m, int n);
-RcppExport SEXP _primes_scm_(SEXP mSEXP, SEXP nSEXP) {
+static SEXP _primes_scm__try(SEXP mSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type m(mSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(scm_(m, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_scm_(SEXP mSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_scm__try(mSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // Rscm_
 int Rscm_(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_Rscm_(SEXP xSEXP) {
+static SEXP _primes_Rscm__try(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(Rscm_(x));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_Rscm_(SEXP xSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_Rscm__try(xSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // gcd
 Rcpp::IntegerVector gcd(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
-RcppExport SEXP _primes_gcd(SEXP mSEXP, SEXP nSEXP) {
+static SEXP _primes_gcd_try(SEXP mSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type m(mSEXP);
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(gcd(m, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_gcd(SEXP mSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_gcd_try(mSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // scm
 Rcpp::IntegerVector scm(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
-RcppExport SEXP _primes_scm(SEXP mSEXP, SEXP nSEXP) {
+static SEXP _primes_scm_try(SEXP mSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type m(mSEXP);
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(scm(m, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_scm(SEXP mSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_scm_try(mSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // coprime
 Rcpp::LogicalVector coprime(const Rcpp::IntegerVector& m, const Rcpp::IntegerVector& n);
-RcppExport SEXP _primes_coprime(SEXP mSEXP, SEXP nSEXP) {
+static SEXP _primes_coprime_try(SEXP mSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type m(mSEXP);
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(coprime(m, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_coprime(SEXP mSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_coprime_try(mSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // generate_n_primes
 std::vector<int> generate_n_primes(int n);
-RcppExport SEXP _primes_generate_n_primes(SEXP nSEXP) {
+static SEXP _primes_generate_n_primes_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(generate_n_primes(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_generate_n_primes(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_generate_n_primes_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // is_prime
 Rcpp::LogicalVector is_prime(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_is_prime(SEXP xSEXP) {
+static SEXP _primes_is_prime_try(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(is_prime(x));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_is_prime(SEXP xSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_is_prime_try(xSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // k_tuple
 Rcpp::List k_tuple(int min, int max, std::vector<int> tuple);
-RcppExport SEXP _primes_k_tuple(SEXP minSEXP, SEXP maxSEXP, SEXP tupleSEXP) {
+static SEXP _primes_k_tuple_try(SEXP minSEXP, SEXP maxSEXP, SEXP tupleSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type min(minSEXP);
     Rcpp::traits::input_parameter< int >::type max(maxSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type tuple(tupleSEXP);
     rcpp_result_gen = Rcpp::wrap(k_tuple(min, max, tuple));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_k_tuple(SEXP minSEXP, SEXP maxSEXP, SEXP tupleSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_k_tuple_try(minSEXP, maxSEXP, tupleSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // sexy_prime_triplets
 Rcpp::List sexy_prime_triplets(int min, int max);
-RcppExport SEXP _primes_sexy_prime_triplets(SEXP minSEXP, SEXP maxSEXP) {
+static SEXP _primes_sexy_prime_triplets_try(SEXP minSEXP, SEXP maxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type min(minSEXP);
     Rcpp::traits::input_parameter< int >::type max(maxSEXP);
     rcpp_result_gen = Rcpp::wrap(sexy_prime_triplets(min, max));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_sexy_prime_triplets(SEXP minSEXP, SEXP maxSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_sexy_prime_triplets_try(minSEXP, maxSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // next_prime
 Rcpp::IntegerVector next_prime(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_next_prime(SEXP xSEXP) {
+static SEXP _primes_next_prime_try(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(next_prime(x));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_next_prime(SEXP xSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_next_prime_try(xSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // prev_prime
 Rcpp::IntegerVector prev_prime(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_prev_prime(SEXP xSEXP) {
+static SEXP _primes_prev_prime_try(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(prev_prime(x));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_prev_prime(SEXP xSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_prev_prime_try(xSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // nth_prime
 Rcpp::IntegerVector nth_prime(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_nth_prime(SEXP xSEXP) {
+static SEXP _primes_nth_prime_try(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(nth_prime(x));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_nth_prime(SEXP xSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_nth_prime_try(xSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // prime_count
 int prime_count(int n, bool upper_bound);
-RcppExport SEXP _primes_prime_count(SEXP nSEXP, SEXP upper_boundSEXP) {
+static SEXP _primes_prime_count_try(SEXP nSEXP, SEXP upper_boundSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< bool >::type upper_bound(upper_boundSEXP);
     rcpp_result_gen = Rcpp::wrap(prime_count(n, upper_bound));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_prime_count(SEXP nSEXP, SEXP upper_boundSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_prime_count_try(nSEXP, upper_boundSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // nth_prime_estimate
 int nth_prime_estimate(int n, bool upper_bound);
-RcppExport SEXP _primes_nth_prime_estimate(SEXP nSEXP, SEXP upper_boundSEXP) {
+static SEXP _primes_nth_prime_estimate_try(SEXP nSEXP, SEXP upper_boundSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< bool >::type upper_bound(upper_boundSEXP);
     rcpp_result_gen = Rcpp::wrap(nth_prime_estimate(n, upper_bound));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_nth_prime_estimate(SEXP nSEXP, SEXP upper_boundSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_nth_prime_estimate_try(nSEXP, upper_boundSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // prime_factors
 Rcpp::List prime_factors(const Rcpp::IntegerVector& x);
-RcppExport SEXP _primes_prime_factors(SEXP xSEXP) {
+static SEXP _primes_prime_factors_try(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(prime_factors(x));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_prime_factors(SEXP xSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_prime_factors_try(xSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // generate_primes_
 std::vector<int> generate_primes_(int min, int max);
-RcppExport SEXP _primes_generate_primes_(SEXP minSEXP, SEXP maxSEXP) {
+static SEXP _primes_generate_primes__try(SEXP minSEXP, SEXP maxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type min(minSEXP);
     Rcpp::traits::input_parameter< int >::type max(maxSEXP);
     rcpp_result_gen = Rcpp::wrap(generate_primes_(min, max));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _primes_generate_primes_(SEXP minSEXP, SEXP maxSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_primes_generate_primes__try(minSEXP, maxSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 
 // validate (ensure exported C++ functions exist before calling them)
 static int _primes_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
+        signatures.insert("int(*gcd_)(int,int)");
+        signatures.insert("int(*Rgcd_)(const Rcpp::IntegerVector&)");
+        signatures.insert("int(*scm_)(int,int)");
+        signatures.insert("int(*Rscm_)(const Rcpp::IntegerVector&)");
+        signatures.insert("Rcpp::IntegerVector(*gcd)(const Rcpp::IntegerVector&,const Rcpp::IntegerVector&)");
+        signatures.insert("Rcpp::IntegerVector(*scm)(const Rcpp::IntegerVector&,const Rcpp::IntegerVector&)");
+        signatures.insert("Rcpp::LogicalVector(*coprime)(const Rcpp::IntegerVector&,const Rcpp::IntegerVector&)");
+        signatures.insert("std::vector<int>(*generate_n_primes)(int)");
+        signatures.insert("Rcpp::LogicalVector(*is_prime)(const Rcpp::IntegerVector&)");
+        signatures.insert("Rcpp::List(*k_tuple)(int,int,std::vector<int>)");
+        signatures.insert("Rcpp::List(*sexy_prime_triplets)(int,int)");
+        signatures.insert("Rcpp::IntegerVector(*next_prime)(const Rcpp::IntegerVector&)");
+        signatures.insert("Rcpp::IntegerVector(*prev_prime)(const Rcpp::IntegerVector&)");
+        signatures.insert("Rcpp::IntegerVector(*nth_prime)(const Rcpp::IntegerVector&)");
+        signatures.insert("int(*prime_count)(int,bool)");
+        signatures.insert("int(*nth_prime_estimate)(int,bool)");
+        signatures.insert("Rcpp::List(*prime_factors)(const Rcpp::IntegerVector&)");
+        signatures.insert("std::vector<int>(*generate_primes_)(int,int)");
     }
     return signatures.find(sig) != signatures.end();
 }
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _primes_RcppExport_registerCCallable() { 
+    R_RegisterCCallable("primes", "_primes_gcd_", (DL_FUNC)_primes_gcd__try);
+    R_RegisterCCallable("primes", "_primes_Rgcd_", (DL_FUNC)_primes_Rgcd__try);
+    R_RegisterCCallable("primes", "_primes_scm_", (DL_FUNC)_primes_scm__try);
+    R_RegisterCCallable("primes", "_primes_Rscm_", (DL_FUNC)_primes_Rscm__try);
+    R_RegisterCCallable("primes", "_primes_gcd", (DL_FUNC)_primes_gcd_try);
+    R_RegisterCCallable("primes", "_primes_scm", (DL_FUNC)_primes_scm_try);
+    R_RegisterCCallable("primes", "_primes_coprime", (DL_FUNC)_primes_coprime_try);
+    R_RegisterCCallable("primes", "_primes_generate_n_primes", (DL_FUNC)_primes_generate_n_primes_try);
+    R_RegisterCCallable("primes", "_primes_is_prime", (DL_FUNC)_primes_is_prime_try);
+    R_RegisterCCallable("primes", "_primes_k_tuple", (DL_FUNC)_primes_k_tuple_try);
+    R_RegisterCCallable("primes", "_primes_sexy_prime_triplets", (DL_FUNC)_primes_sexy_prime_triplets_try);
+    R_RegisterCCallable("primes", "_primes_next_prime", (DL_FUNC)_primes_next_prime_try);
+    R_RegisterCCallable("primes", "_primes_prev_prime", (DL_FUNC)_primes_prev_prime_try);
+    R_RegisterCCallable("primes", "_primes_nth_prime", (DL_FUNC)_primes_nth_prime_try);
+    R_RegisterCCallable("primes", "_primes_prime_count", (DL_FUNC)_primes_prime_count_try);
+    R_RegisterCCallable("primes", "_primes_nth_prime_estimate", (DL_FUNC)_primes_nth_prime_estimate_try);
+    R_RegisterCCallable("primes", "_primes_prime_factors", (DL_FUNC)_primes_prime_factors_try);
+    R_RegisterCCallable("primes", "_primes_generate_primes_", (DL_FUNC)_primes_generate_primes__try);
     R_RegisterCCallable("primes", "_primes_RcppExport_validate", (DL_FUNC)_primes_RcppExport_validate);
     return R_NilValue;
 }

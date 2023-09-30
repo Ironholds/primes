@@ -5,6 +5,8 @@
 
 #include "primes.h"
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 static Rcpp::IntegerVector prime_factors_(int n, const std::vector<int> &primes) {
   Rcpp::IntegerVector factors;
 

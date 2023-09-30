@@ -2,6 +2,8 @@
 
 #include "primes.h"
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 //' Find the Next and Previous Prime Numbers
 //'
 //' Find the next prime numbers or previous prime numbers over a vector.

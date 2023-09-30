@@ -3,6 +3,8 @@
 
 #include "primes.h"
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 //' @rdname generate_primes
 //' @export
 // [[Rcpp::export]]

@@ -4,6 +4,8 @@
 
 #include "primes.h"
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 static std::vector<int>::iterator
 forward_search(std::vector<int>::iterator first,
                std::vector<int>::iterator last,
