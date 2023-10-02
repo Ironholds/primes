@@ -3,6 +3,8 @@
 
 #include "primes.h"
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 //' Get the n-th Prime from the Sequence of Primes.
 //'
 //' Get the n-th prime, \eqn{p_n}, in the sequence of primes.

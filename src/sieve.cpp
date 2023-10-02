@@ -5,6 +5,8 @@
 
 #include "primes.h"
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 static inline int num2index(int x) { return (x - 3) / 2; }
 
 static inline int index2num(int x) { return (x * 2) + 3; }

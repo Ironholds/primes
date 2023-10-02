@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 #include <cmath>
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 static const double prime_count_c = 30 * log((double)113) / 113;
 
 //' @rdname prime_count

@@ -17,7 +17,7 @@ Description: Fast functions for dealing with prime numbers, such as testing
     testing whether two numbers are coprime, and computing Euler's totient
     function. Most functions are vectorized for speed and convenience.
 License: MIT + file LICENSE
-Depends: R (>= 2.10)
+Depends: R (>= 4.0)
 Imports: Rcpp
 LinkingTo: Rcpp
 Suggests: testthat

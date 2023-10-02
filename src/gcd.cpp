@@ -3,6 +3,7 @@
 #include <numeric>    // accumulate
 #include <cstdlib>    // abs
 
+// [[Rcpp::interfaces(r, cpp)]]
 
 // [[Rcpp::export]]
 int gcd_(int m, int n) {

@@ -4,9 +4,6 @@
 #include <Rcpp.h>
 #include <vector>
 
-// [[Rcpp::interfaces(r, cpp)]]
-// [[Rcpp::plugins(cpp11)]]
-
 std::vector<int> generate_primes_(int min, int max);
 std::vector<int> generate_n_primes(int n);
 Rcpp::IntegerVector nth_prime(const Rcpp::IntegerVector& x);
