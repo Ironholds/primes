@@ -2,7 +2,7 @@ Package: primes
 Type: Package
 Title: Fast Functions for Prime Numbers
 Version: 1.5.0
-Date: 2022-12-27
+Date: 2023-10-02
 Authors@R: c(
     person("Os", "Keyes", email = "ironholds@gmail.com", role = c("aut", "cre")),
     person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-6948-9498"))
