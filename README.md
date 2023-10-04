@@ -5,7 +5,7 @@ Fast Functions for Prime Numbers in R
 [![Number of Downloads](https://cranlogs.r-pkg.org/badges/grand-total/primes)](https://cran.r-project.org/package=primes)
 
 **Authors**: Os Keyes and Paul Egeler  
-**License**: [MIT](https://opensource.org/licenses/MIT)  
+**License**: [MIT](https://opensource.org/license/mit/)  
 
 ## Description
 
