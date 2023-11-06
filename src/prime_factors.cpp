@@ -1,16 +1,22 @@
 #include <Rcpp.h>
-#include <algorithm>  // max_element
 #include <cmath>      // sqrt
 #include <vector>
 
 #include "primes.h"
 
+using std::sqrt;
+
 // [[Rcpp::interfaces(r, cpp)]]
 
 static Rcpp::IntegerVector prime_factors_(int n, const std::vector<int> &primes) {
+  if (n < 2)
+    return {};
+
   Rcpp::IntegerVector factors;
 
-  int stop = sqrt((double)n);
+  // TODO: static_cast<double>() no longer necessary. Overload from integer
+  //       supported since C++11.
+  int stop = sqrt(static_cast<double>(n));
   for (auto p = primes.begin(); p != primes.end() && *p <= stop && n > 1; ++p) {
     while (n % *p == 0) {
       factors.push_back(*p);
@@ -58,8 +64,8 @@ Rcpp::List prime_factors(const Rcpp::IntegerVector &x) {
 
   Rcpp::List out(x.size());
   auto it = out.begin();
-  int max = *std::max_element(x.begin(), x.end());
-  auto primes = generate_primes_(2, max > 8 ? sqrt((double)max) : 2);
+  int max = Rcpp::algorithm::max_nona(x.begin(), x.end());
+  auto primes = generate_primes_(2, max > 8 ? sqrt(static_cast<double>(max)) : 2);
 
   for (auto n : x) {
     *(it++) = Rcpp::IntegerVector::is_na(n)

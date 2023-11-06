@@ -3,8 +3,9 @@ context("Prime factors")
 test_that("Create a vector of factors", {
   expect_equal(prime_factors(2), list(2))
   expect_equal(
-    prime_factors(c(-1:2, 7:11)),
+    prime_factors(c(-2:2, 7:11)),
     list(
+      integer(0),     # -2
       integer(0),     # -1
       integer(0),     #  0
       integer(0),     #  1
@@ -26,6 +27,10 @@ test_that("NAs are handled properly", {
   expect_equal(
     prime_factors(c(NA, 1, 3)),
     list(as.integer(NA), integer(0), 3L)
+  )
+  expect_equal(
+    prime_factors(c(NA, 120)),
+    list(as.integer(NA), c(2L, 2L, 2L, 3L, 5L))
   )
 })
 
