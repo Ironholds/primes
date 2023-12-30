@@ -24,7 +24,20 @@ phi <- function(n) {
   factors <- prime_factors(n)
   vapply(
     seq_along(n),
-    function(i) as.integer(n[i] * prod(1 - 1 / unique(factors[[i]]))),
+    function(i) as.integer(round(n[i] * prod(1 - 1 / unique(factors[[i]])))),
     integer(1)
+  )
+}
+
+phi_alt <- function(n) {
+  # Alternate formula. Approximately 3-4x slower. Used for testing.
+  # See Ironholds/primes#14 for details.
+  vapply(
+    prime_factors(n),
+    \(x) {
+      runs <- rle(x)
+      as.integer(prod(runs$values ** (runs$lengths - 1) * (runs$values - 1)))
+      },
+    integer(1L)
   )
 }
